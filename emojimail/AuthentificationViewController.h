@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  AuthentificationViewController.h
 //  emojimail
 //
 //  Created by Aram Sargsyan on 9/18/17.
@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Google/SignIn.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AuthentificationViewController : UIViewController
 
-@property (strong, nonatomic) UIWindow *window;
-
+- (void)showAlert:(NSString *)title message:(NSString *)message;
 
 @end
-
-

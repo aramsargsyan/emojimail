@@ -10,22 +10,40 @@
 		24F781851F70384300C81BC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781841F70384300C81BC9 /* main.m */; };
 		24F781881F70384300C81BC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781871F70384300C81BC9 /* AppDelegate.m */; };
 		24F7818B1F70384300C81BC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F7818A1F70384300C81BC9 /* ViewController.m */; };
-		24F7818E1F70384300C81BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F7818C1F70384300C81BC9 /* Main.storyboard */; };
 		24F781901F70384300C81BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F7818F1F70384300C81BC9 /* Assets.xcassets */; };
 		24F781931F70384300C81BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F781911F70384300C81BC9 /* LaunchScreen.storyboard */; };
+		24F7819B1F70384E00C81BC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */; };
+		24F7819F1F70432F00C81BC9 /* MailDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F7819E1F70432F00C81BC9 /* MailDataSource.m */; };
+		24F781A41F70456C00C81BC9 /* AuthentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */; };
+		24F781A51F70456C00C81BC9 /* AuthentificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */; };
+		24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */; };
+		24F781AC1F70621900C81BC9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781AB1F70621900C81BC9 /* HomeViewController.m */; };
+		FFA5A5433F4B19AC23615DA6 /* libPods-emojimail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1690292B101CE03A9D5863B8 /* libPods-emojimail.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1690292B101CE03A9D5863B8 /* libPods-emojimail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-emojimail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F781801F70384300C81BC9 /* emojimail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emojimail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F781841F70384300C81BC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24F781861F70384300C81BC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24F781871F70384300C81BC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		24F781891F70384300C81BC9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		24F7818A1F70384300C81BC9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		24F7818D1F70384300C81BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F7818F1F70384300C81BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24F781921F70384300C81BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24F781941F70384300C81BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		24F7819D1F70432F00C81BC9 /* MailDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailDataSource.h; sourceTree = "<group>"; };
+		24F7819E1F70432F00C81BC9 /* MailDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailDataSource.m; sourceTree = "<group>"; };
+		24F781A11F70456C00C81BC9 /* AuthentificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthentificationViewController.h; sourceTree = "<group>"; };
+		24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthentificationViewController.m; sourceTree = "<group>"; };
+		24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthentificationViewController.xib; sourceTree = "<group>"; };
+		24F781A61F705ED200C81BC9 /* GoogleSignInManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleSignInManager.h; sourceTree = "<group>"; };
+		24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleSignInManager.m; sourceTree = "<group>"; };
+		24F781AA1F70621900C81BC9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		24F781AB1F70621900C81BC9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		71EA2C247D4BBD00A355A25E /* Pods-emojimail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emojimail.release.xcconfig"; path = "Pods/Target Support Files/Pods-emojimail/Pods-emojimail.release.xcconfig"; sourceTree = "<group>"; };
+		90B4CCD2D9EFDB108775B684 /* Pods-emojimail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emojimail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-emojimail/Pods-emojimail.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA5A5433F4B19AC23615DA6 /* libPods-emojimail.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +63,8 @@
 			children = (
 				24F781821F70384300C81BC9 /* emojimail */,
 				24F781811F70384300C81BC9 /* Products */,
+				E49679860A5071FA6E6EFC69 /* Pods */,
+				5D17D6A271D91EBA2D2AF4BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,12 +81,13 @@
 			children = (
 				24F781861F70384300C81BC9 /* AppDelegate.h */,
 				24F781871F70384300C81BC9 /* AppDelegate.m */,
-				24F781891F70384300C81BC9 /* ViewController.h */,
-				24F7818A1F70384300C81BC9 /* ViewController.m */,
-				24F7818C1F70384300C81BC9 /* Main.storyboard */,
+				24F781A91F705EDA00C81BC9 /* Managers */,
+				24F7819C1F7042E700C81BC9 /* ViewControllers */,
+				24F781A01F70433500C81BC9 /* DataSources */,
 				24F7818F1F70384300C81BC9 /* Assets.xcassets */,
 				24F781911F70384300C81BC9 /* LaunchScreen.storyboard */,
 				24F781941F70384300C81BC9 /* Info.plist */,
+				24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */,
 				24F781831F70384300C81BC9 /* Supporting Files */,
 			);
 			path = emojimail;
@@ -79,6 +101,55 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		24F7819C1F7042E700C81BC9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				24F781891F70384300C81BC9 /* ViewController.h */,
+				24F7818A1F70384300C81BC9 /* ViewController.m */,
+				24F781AA1F70621900C81BC9 /* HomeViewController.h */,
+				24F781AB1F70621900C81BC9 /* HomeViewController.m */,
+				24F781A11F70456C00C81BC9 /* AuthentificationViewController.h */,
+				24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */,
+				24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		24F781A01F70433500C81BC9 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				24F7819D1F70432F00C81BC9 /* MailDataSource.h */,
+				24F7819E1F70432F00C81BC9 /* MailDataSource.m */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
+		24F781A91F705EDA00C81BC9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				24F781A61F705ED200C81BC9 /* GoogleSignInManager.h */,
+				24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		5D17D6A271D91EBA2D2AF4BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1690292B101CE03A9D5863B8 /* libPods-emojimail.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E49679860A5071FA6E6EFC69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90B4CCD2D9EFDB108775B684 /* Pods-emojimail.debug.xcconfig */,
+				71EA2C247D4BBD00A355A25E /* Pods-emojimail.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24F781971F70384300C81BC9 /* Build configuration list for PBXNativeTarget "emojimail" */;
 			buildPhases = (
+				CC4821540707F62B43BD3AD8 /* [CP] Check Pods Manifest.lock */,
 				24F7817C1F70384300C81BC9 /* Sources */,
 				24F7817D1F70384300C81BC9 /* Frameworks */,
 				24F7817E1F70384300C81BC9 /* Resources */,
+				72E47C04D690FF2E6594AB1A /* [CP] Embed Pods Frameworks */,
+				DF13145868BC5BEF50AA2A8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,12 +213,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F781931F70384300C81BC9 /* LaunchScreen.storyboard in Resources */,
+				24F781A51F70456C00C81BC9 /* AuthentificationViewController.xib in Resources */,
+				24F7819B1F70384E00C81BC9 /* GoogleService-Info.plist in Resources */,
 				24F781901F70384300C81BC9 /* Assets.xcassets in Resources */,
-				24F7818E1F70384300C81BC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72E47C04D690FF2E6594AB1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-emojimail/Pods-emojimail-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC4821540707F62B43BD3AD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-emojimail-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF13145868BC5BEF50AA2A8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-emojimail/Pods-emojimail-resources.sh",
+				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-emojimail/Pods-emojimail-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		24F7817C1F70384300C81BC9 /* Sources */ = {
@@ -152,7 +282,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F7818B1F70384300C81BC9 /* ViewController.m in Sources */,
+				24F7819F1F70432F00C81BC9 /* MailDataSource.m in Sources */,
+				24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */,
 				24F781881F70384300C81BC9 /* AppDelegate.m in Sources */,
+				24F781A41F70456C00C81BC9 /* AuthentificationViewController.m in Sources */,
+				24F781AC1F70621900C81BC9 /* HomeViewController.m in Sources */,
 				24F781851F70384300C81BC9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,14 +294,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		24F7818C1F70384300C81BC9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24F7818D1F70384300C81BC9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		24F781911F70384300C81BC9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -273,6 +399,7 @@
 		};
 		24F781981F70384300C81BC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90B4CCD2D9EFDB108775B684 /* Pods-emojimail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P6TG56JU5M;
@@ -285,6 +412,7 @@
 		};
 		24F781991F70384300C81BC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71EA2C247D4BBD00A355A25E /* Pods-emojimail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P6TG56JU5M;
@@ -314,6 +442,7 @@
 				24F781991F70384300C81BC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
