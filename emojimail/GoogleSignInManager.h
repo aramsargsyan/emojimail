@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Google/SignIn.h>
 
 @interface GoogleSignInManager : NSObject
+
+@property (nonatomic, readonly) GIDGoogleUser *user;
 
 + (instancetype)sharedInstance;
 

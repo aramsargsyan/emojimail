@@ -13,11 +13,14 @@
 		24F781901F70384300C81BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F7818F1F70384300C81BC9 /* Assets.xcassets */; };
 		24F781931F70384300C81BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F781911F70384300C81BC9 /* LaunchScreen.storyboard */; };
 		24F7819B1F70384E00C81BC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */; };
-		24F7819F1F70432F00C81BC9 /* MailDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F7819E1F70432F00C81BC9 /* MailDataSource.m */; };
+		24F7819F1F70432F00C81BC9 /* MessagesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F7819E1F70432F00C81BC9 /* MessagesDataSource.m */; };
 		24F781A41F70456C00C81BC9 /* AuthentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */; };
 		24F781A51F70456C00C81BC9 /* AuthentificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */; };
 		24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */; };
 		24F781AC1F70621900C81BC9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781AB1F70621900C81BC9 /* HomeViewController.m */; };
+		24F781B01F727DE600C81BC9 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781AE1F727DE600C81BC9 /* MessageTableViewCell.m */; };
+		24F781B11F727DE600C81BC9 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24F781AF1F727DE600C81BC9 /* MessageTableViewCell.xib */; };
+		24F781B51F72801400C81BC9 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781B41F72801400C81BC9 /* InitialViewController.m */; };
 		FFA5A5433F4B19AC23615DA6 /* libPods-emojimail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1690292B101CE03A9D5863B8 /* libPods-emojimail.a */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +36,8 @@
 		24F781921F70384300C81BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24F781941F70384300C81BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		24F7819D1F70432F00C81BC9 /* MailDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailDataSource.h; sourceTree = "<group>"; };
-		24F7819E1F70432F00C81BC9 /* MailDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailDataSource.m; sourceTree = "<group>"; };
+		24F7819D1F70432F00C81BC9 /* MessagesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesDataSource.h; sourceTree = "<group>"; };
+		24F7819E1F70432F00C81BC9 /* MessagesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesDataSource.m; sourceTree = "<group>"; };
 		24F781A11F70456C00C81BC9 /* AuthentificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthentificationViewController.h; sourceTree = "<group>"; };
 		24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthentificationViewController.m; sourceTree = "<group>"; };
 		24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthentificationViewController.xib; sourceTree = "<group>"; };
@@ -42,6 +45,11 @@
 		24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleSignInManager.m; sourceTree = "<group>"; };
 		24F781AA1F70621900C81BC9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		24F781AB1F70621900C81BC9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		24F781AD1F727DE600C81BC9 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		24F781AE1F727DE600C81BC9 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		24F781AF1F727DE600C81BC9 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		24F781B31F72801400C81BC9 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		24F781B41F72801400C81BC9 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		71EA2C247D4BBD00A355A25E /* Pods-emojimail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emojimail.release.xcconfig"; path = "Pods/Target Support Files/Pods-emojimail/Pods-emojimail.release.xcconfig"; sourceTree = "<group>"; };
 		90B4CCD2D9EFDB108775B684 /* Pods-emojimail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emojimail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-emojimail/Pods-emojimail.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +91,7 @@
 				24F781871F70384300C81BC9 /* AppDelegate.m */,
 				24F781A91F705EDA00C81BC9 /* Managers */,
 				24F7819C1F7042E700C81BC9 /* ViewControllers */,
+				24F781B21F727E0D00C81BC9 /* Views */,
 				24F781A01F70433500C81BC9 /* DataSources */,
 				24F7818F1F70384300C81BC9 /* Assets.xcassets */,
 				24F781911F70384300C81BC9 /* LaunchScreen.storyboard */,
@@ -106,6 +115,8 @@
 			children = (
 				24F781891F70384300C81BC9 /* ViewController.h */,
 				24F7818A1F70384300C81BC9 /* ViewController.m */,
+				24F781B31F72801400C81BC9 /* InitialViewController.h */,
+				24F781B41F72801400C81BC9 /* InitialViewController.m */,
 				24F781AA1F70621900C81BC9 /* HomeViewController.h */,
 				24F781AB1F70621900C81BC9 /* HomeViewController.m */,
 				24F781A11F70456C00C81BC9 /* AuthentificationViewController.h */,
@@ -118,8 +129,8 @@
 		24F781A01F70433500C81BC9 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				24F7819D1F70432F00C81BC9 /* MailDataSource.h */,
-				24F7819E1F70432F00C81BC9 /* MailDataSource.m */,
+				24F7819D1F70432F00C81BC9 /* MessagesDataSource.h */,
+				24F7819E1F70432F00C81BC9 /* MessagesDataSource.m */,
 			);
 			name = DataSources;
 			sourceTree = "<group>";
@@ -131,6 +142,16 @@
 				24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		24F781B21F727E0D00C81BC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24F781AD1F727DE600C81BC9 /* MessageTableViewCell.h */,
+				24F781AE1F727DE600C81BC9 /* MessageTableViewCell.m */,
+				24F781AF1F727DE600C81BC9 /* MessageTableViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		5D17D6A271D91EBA2D2AF4BB /* Frameworks */ = {
@@ -214,6 +235,7 @@
 			files = (
 				24F781931F70384300C81BC9 /* LaunchScreen.storyboard in Resources */,
 				24F781A51F70456C00C81BC9 /* AuthentificationViewController.xib in Resources */,
+				24F781B11F727DE600C81BC9 /* MessageTableViewCell.xib in Resources */,
 				24F7819B1F70384E00C81BC9 /* GoogleService-Info.plist in Resources */,
 				24F781901F70384300C81BC9 /* Assets.xcassets in Resources */,
 			);
@@ -281,8 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24F781B51F72801400C81BC9 /* InitialViewController.m in Sources */,
 				24F7818B1F70384300C81BC9 /* ViewController.m in Sources */,
-				24F7819F1F70432F00C81BC9 /* MailDataSource.m in Sources */,
+				24F781B01F727DE600C81BC9 /* MessageTableViewCell.m in Sources */,
+				24F7819F1F70432F00C81BC9 /* MessagesDataSource.m in Sources */,
 				24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */,
 				24F781881F70384300C81BC9 /* AppDelegate.m in Sources */,
 				24F781A41F70456C00C81BC9 /* AuthentificationViewController.m in Sources */,

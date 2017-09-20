@@ -7,18 +7,17 @@
 //
 
 #import "GoogleSignInManager.h"
-#import "ViewController.h"
 #import "HomeViewController.h"
 #import "AuthentificationViewController.h"
-#import <Google/SignIn.h>
 #import <GTLRGmail.h>
 
 
 @interface GoogleSignInManager () <GIDSignInDelegate, GIDSignInUIDelegate>
 
-@property BOOL didSignInCalled;
-@property UINavigationController *navigationController;
-@property UIViewController *googleSignInViewController;
+@property (nonatomic) UINavigationController *navigationController;
+@property (nonatomic) UIViewController *googleSignInViewController;
+
+@property (nonatomic, readwrite) GIDGoogleUser *user;
 
 @end
 
@@ -40,17 +39,19 @@
 
 
 - (void)startGoogleSignInFlowWithNavigationController:(UINavigationController *)navigationController {
+    NSAssert(navigationController, @"[GoogleSignInManager] needs an initial view controller embedded in a UINavigationController to perform necessary UI changes");
     self.navigationController = navigationController;
     
     // Configure Google Sign-in.
     GIDSignIn* signIn = [GIDSignIn sharedInstance];
     signIn.delegate = self;
     signIn.uiDelegate = self;
-    
     signIn.scopes = [NSArray arrayWithObjects:kGTLRAuthScopeGmailReadonly, nil];
     
     if (signIn.hasAuthInKeychain) {
         [signIn signInSilently];
+    } else {
+        [self.navigationController setViewControllers:@[[[AuthentificationViewController alloc] init]] animated:NO];
     }
 }
 
@@ -69,23 +70,22 @@
 
 
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
-    if (!self.didSignInCalled) {
-        self.didSignInCalled = YES;
-        if (error) {
-            AuthentificationViewController *authentificationController = [[AuthentificationViewController alloc] init];
-            [self.navigationController setViewControllers:@[authentificationController] animated:NO];
-            [self showAlertOnVisibleAuthControllerForError:error];
+    self.user = user;
+    if (error) {
+        if (self.googleSignInViewController) {
+            [self.googleSignInViewController dismissViewControllerAnimated:YES completion:^{
+                [self showAlertOnVisibleAuthControllerForError:error];
+            }];
         } else {
-            [self.navigationController setViewControllers:@[[[HomeViewController alloc] init]] animated:NO];
+            if (!(self.navigationController.viewControllers.count && [self.navigationController.viewControllers.firstObject isKindOfClass:AuthentificationViewController.class])) {
+                [self.navigationController setViewControllers:@[[[AuthentificationViewController alloc] init]] animated:NO];
+            }
         }
     } else {
-        if (error) {
-            [self showAlertOnVisibleAuthControllerForError:error];
-        } else {
-            [self.navigationController setViewControllers:@[[[HomeViewController alloc] init]] animated:NO];
-        }
+        [self.navigationController setViewControllers:@[[[HomeViewController alloc] init]] animated:NO];
         [self.googleSignInViewController dismissViewControllerAnimated:YES completion:nil];
     }
+    self.googleSignInViewController = nil;
 }
 
 

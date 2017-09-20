@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "InitialViewController.h"
 #import "GoogleSignInManager.h"
 
 @interface AppDelegate ()
@@ -25,11 +25,11 @@
     [[GGLContext sharedInstance] configureWithError: &configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-    [[GoogleSignInManager sharedInstance] startGoogleSignInFlowWithNavigationController:navigationController];
+    // Configure the main navigation controller
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[InitialViewController alloc] init]];
+    [navigationController setNavigationBarHidden:YES animated:NO];
     
-    
-    // Configure initial view controller
+    // Configure window
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -46,7 +46,6 @@
                                sourceApplication:sourceApplication
                                       annotation:annotation];
 }
-
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

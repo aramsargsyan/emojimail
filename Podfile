@@ -7,7 +7,8 @@ target 'emojimail' do
 
   # Pods for emojimail
 
-  pod 'GoogleAPIClientForREST/Gmail', '~> 1.2.1'
   pod 'Google/SignIn', '~> 3.0.3'
+  pod 'GoogleAPIClientForREST/Gmail', '~> 1.2.1'
+  pod 'AppleReachability'
 
 end

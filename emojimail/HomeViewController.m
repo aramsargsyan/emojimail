@@ -7,32 +7,72 @@
 //
 
 #import "HomeViewController.h"
+#import "MessagesDataSource.h"
+#import "MessageTableViewCell.h"
 
-@interface HomeViewController ()
+
+@interface HomeViewController () <MessagesDataSourceDelegate, UITableViewDelegate>
+
+@property (nonatomic) MessagesDataSource *dataSource;
+
+@property (nonatomic) UITableView *messagesTableView;
 
 @end
 
+
 @implementation HomeViewController
+
+#pragma mark - Lifecycle
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor cyanColor];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSDictionary *info = [bundle infoDictionary];
+    self.navigationItem.title = [info objectForKey:@"CFBundleDisplayName"];
+    
+    if (self.navigationController) {
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+    }
+    
+    [self configureTableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)configureTableView {
+    self.messagesTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    [self.messagesTableView registerNib:[UINib nibWithNibName:NSStringFromClass(MessageTableViewCell.class) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[MessageTableViewCell defaultReuseIdentifier]];
+    
+    self.dataSource = [[MessagesDataSource alloc] init];
+    self.messagesTableView.dataSource = self.dataSource;
+    self.messagesTableView.delegate = self;
+    self.dataSource.delegate = self;
+    
+    [self.view addSubview:self.messagesTableView];
+    [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0].active = YES;
+    [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0].active = YES;
+    [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0].active = YES;
+    [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:0].active = YES;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UITableViewDelegate
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [MessageTableViewCell defaultCellHeight];
 }
-*/
+
+
+#pragma mark - MessagesDataSourceDelegate
+
+
+- (void)refresh {
+    [self.messagesTableView reloadData];
+}
+
+
 
 @end
