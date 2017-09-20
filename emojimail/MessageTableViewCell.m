@@ -25,13 +25,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    // No need for selection on these cells
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

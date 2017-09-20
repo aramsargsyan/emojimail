@@ -14,18 +14,22 @@
 
 @interface MessagesDataSource ()
 
-@property (nonatomic, strong) GTLRGmailService *service;
+@property (nonatomic) GTLRGmailService *service;
+
+@property (nonatomic) BOOL requestInProcess;
 
 @property (nonatomic) NSMutableArray <GTLRGmail_Message *> *messages;
 
-@property (nonatomic) NSUInteger lastRequestedMessageIndex;
+@property (nonatomic) NSString *nextPageToken;
 
 @end
 
 
 @implementation MessagesDataSource
 
+
 #pragma mark - Lifecycle
+
 
 - (instancetype)init {
     self = [super init];
@@ -42,14 +46,20 @@
 }
 
 
+#pragma mark - Requests handling
+
+
 - (void)requestForMessagesList {
+    self.requestInProcess = YES;
+    
     // Get the mail list with no content
     GTLRGmailQuery_UsersMessagesList *query = [GTLRGmailQuery_UsersMessagesList queryWithUserId:@"me"];
-    query.includeSpamTrash = NO;
-    query.maxResults = 10;
-    query.pageToken = 0;
-    query.labelIds = nil;
+    
     //query.q = @"rfc822msgid: is:unread";
+    
+    if (self.nextPageToken) {
+        query.pageToken = self.nextPageToken;
+    }
     
     [self.service executeQuery:query
                       delegate:self
@@ -60,10 +70,12 @@
 - (void)mailListRequestOnCompletion:(GTLRServiceTicket *)ticket
                  finishedWithObject:(GTLRGmail_ListMessagesResponse *)messagesResponse
                               error:(NSError *)error {
+    self.requestInProcess = NO;
     if (error) {
         NSLog(@"[MessagesDataSource] failed to get the message list");
     } else {
         [self.messages addObjectsFromArray:messagesResponse.messages];
+        self.nextPageToken = messagesResponse.nextPageToken;
         
         NSMutableArray <NSNumber *> *statusArray = [NSMutableArray array];
         for (NSInteger index = 0; index < messagesResponse.messages.count; index++) {
@@ -97,6 +109,9 @@
 }
 
 
+#pragma mark - Utility methods
+
+
 - (BOOL)areStatusesEntirelyPositive:(NSArray <NSNumber *> *)statusArray {
     for (NSNumber *number in statusArray) {
         if (number.boolValue == NO) {
@@ -122,6 +137,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[MessageTableViewCell defaultReuseIdentifier] forIndexPath:indexPath];
+    
+    // Request for the next page when the user reaches last 10 messages
+    if (indexPath.row == self.messages.count - 10) {
+        [self requestForMessagesList];
+    }
     
     [cell render:self.messages[indexPath.row]];
     
