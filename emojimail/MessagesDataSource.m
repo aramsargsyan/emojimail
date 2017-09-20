@@ -18,6 +18,8 @@
 
 @property (nonatomic) NSMutableArray <GTLRGmail_Message *> *messages;
 
+@property (nonatomic) NSUInteger lastRequestedMessageIndex;
+
 @end
 
 
@@ -62,25 +64,46 @@
         NSLog(@"[MessagesDataSource] failed to get the message list");
     } else {
         [self.messages addObjectsFromArray:messagesResponse.messages];
-        [self.delegate refresh];
+        
+        NSMutableArray <NSNumber *> *statusArray = [NSMutableArray array];
+        for (NSInteger index = 0; index < messagesResponse.messages.count; index++) {
+            [statusArray addObject:[NSNumber numberWithBool:NO]];
+        }
+        
+        // Get message deails for every message
+        for (NSInteger index = 0; index < messagesResponse.messages.count; index++) {
+            
+            GTLRGmail_Message *message = messagesResponse.messages[index];
+            
+            GTLRGmailQuery_UsersMessagesGet *query = [GTLRGmailQuery_UsersMessagesGet queryWithUserId:@"me" identifier:message.identifier];
+            
+            [self.service executeQuery:query completionHandler:^(GTLRServiceTicket * _Nonnull callbackTicket, GTLRGmail_Message * _Nullable newMessage, NSError * _Nullable callbackError) {
+                
+                statusArray[index] = [NSNumber numberWithBool:YES];
+                
+                if (error) {
+                    NSLog(@"[MessagesDataSource] failed to get details for message with id %@", message.identifier);
+                } else {
+                    NSInteger mainIndex = [self.messages indexOfObject:message];
+                    self.messages[mainIndex] = newMessage;
+                    if ([self areStatusesEntirelyPositive:statusArray]) {
+                        [self.delegate refresh];
+                    }
+                }
+            }];
+        }
     }
     
-    // Get message deails for every message
-    for (GTLRGmail_Message *message in self.messages) {
-        GTLRGmailQuery_UsersMessagesGet *query = [GTLRGmailQuery_UsersMessagesGet queryWithUserId:@"me" identifier:message.identifier];
-        
-        [self.service executeQuery:query completionHandler:^(GTLRServiceTicket * _Nonnull callbackTicket, GTLRGmail_Message * _Nullable newMessage, NSError * _Nullable callbackError) {
-            if (error) {
-                NSLog(@"[MessagesDataSource] failed to get message with id %@", message.identifier);
-            } else {
-                NSInteger index = [self.messages indexOfObject:message];
-                self.messages[index] = newMessage;
-                if (index == self.messages.count - 1) {
-                    [self.delegate refresh];
-                }
-            }
-        }];
+}
+
+
+- (BOOL)areStatusesEntirelyPositive:(NSArray <NSNumber *> *)statusArray {
+    for (NSNumber *number in statusArray) {
+        if (number.boolValue == NO) {
+            return NO;
+        }
     }
+    return YES;
 }
 
 
