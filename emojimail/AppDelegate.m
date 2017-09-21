@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 #import "InitialViewController.h"
+#import <Google/SignIn.h>
 #import "GoogleSignInManager.h"
+
+
 
 @interface AppDelegate ()
 
@@ -29,7 +32,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[InitialViewController alloc] init]];
     [navigationController setNavigationBarHidden:YES animated:NO];
     
-    // Configure window
+    // Configure the window
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

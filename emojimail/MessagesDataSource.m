@@ -8,8 +8,9 @@
 
 #import "MessagesDataSource.h"
 #import "GoogleSignInManager.h"
-#import <GTLRGmail.h>
+#import "SentimentPolarityManager.h"
 #import "MessageTableViewCell.h"
+#import "objc/runtime.h"
 
 
 @interface MessagesDataSource ()
@@ -26,7 +27,6 @@
 
 
 @implementation MessagesDataSource
-
 
 #pragma mark - Lifecycle
 
@@ -96,7 +96,13 @@
                 if (error) {
                     NSLog(@"[MessagesDataSource] failed to get details for message with id %@", message.identifier);
                 } else {
-                    // TODO determine emoji here and set to new Property for GTLRGmail_Message
+                    NSString *subject;
+                    for (GTLRGmail_MessagePartHeader *header in newMessage.payload.headers) {
+                        if ([header.name isEqualToString:@"Subject"]) {
+                            subject = header.value;
+                        }
+                    }
+                    newMessage.emojiString = [[SentimentPolarityManager sharedManager] sentimentEmojiForText:subject];
                     
                     NSInteger mainIndex = [self.messages indexOfObject:message];
                     self.messages[mainIndex] = newMessage;
@@ -141,13 +147,31 @@
     MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[MessageTableViewCell defaultReuseIdentifier] forIndexPath:indexPath];
     
     // Request for the next page when the user reaches last 10 messages
-    if (indexPath.row == self.messages.count - 10) {
+    if ((indexPath.row == self.messages.count - 10) && !self.requestInProcess) {
         [self requestForMessagesList];
     }
     
     [cell render:self.messages[indexPath.row]];
     
     return cell;
+}
+
+
+@end
+
+
+@implementation GTLRGmail_Message (MessagesDataSource)
+
+
+- (void)setEmojiString:(NSString *)emojiString
+{
+    objc_setAssociatedObject(self, @selector(emojiString), emojiString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
+- (NSString *)emojiString
+{
+    return objc_getAssociatedObject(self, @selector(emojiString));
 }
 
 

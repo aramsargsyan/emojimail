@@ -7,6 +7,7 @@
 //
 
 #import "MessageTableViewCell.h"
+#import "MessagesDataSource.h"
 
 
 @interface MessageTableViewCell ()
@@ -23,6 +24,9 @@
 @implementation MessageTableViewCell
 
 
+#pragma mark - Lifecycle
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
@@ -37,9 +41,13 @@
 }
 
 
+#pragma mark - Public
+
+
 + (NSString *)defaultReuseIdentifier {
     return NSStringFromClass(self.class);
 }
+
 
 + (CGFloat)defaultCellHeight {
     return 120;
@@ -71,9 +79,12 @@
         }
     }
     
-    self.emojiLabel.text = @"😁";
+    if (message.emojiString) {
+        self.emojiLabel.text = message.emojiString;
+    } else {
+        self.emojiLabel.text = @"😐";
+    }
 }
-
 
 
 @end

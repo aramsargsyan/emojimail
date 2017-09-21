@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <GTLRGmail.h>
 
 
 @protocol MessagesDataSourceDelegate <NSObject>
@@ -21,5 +22,12 @@
 @interface MessagesDataSource : NSObject <UITableViewDataSource>
 
 @property (weak, nonatomic) id<MessagesDataSourceDelegate> delegate;
+
+@end
+
+
+@interface GTLRGmail_Message (MessagesDataSource)
+
+@property NSString *emojiString;
 
 @end

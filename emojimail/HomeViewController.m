@@ -10,6 +10,7 @@
 #import "MessagesDataSource.h"
 #import "MessageTableViewCell.h"
 
+
 @interface HomeViewController () <MessagesDataSourceDelegate, UITableViewDelegate>
 
 @property (nonatomic) MessagesDataSource *dataSource;
@@ -39,6 +40,9 @@
     
     [self configureTableView];
 }
+
+
+#pragma mark - Views
 
 
 - (void)configureTableView {
@@ -73,7 +77,6 @@
 - (void)refresh {
     [self.messagesTableView reloadData];
 }
-
 
 
 @end

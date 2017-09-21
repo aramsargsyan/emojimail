@@ -7,6 +7,7 @@
 //
 
 #import "AuthentificationViewController.h"
+#import <Google/SignIn.h>
 #import <GTLRGmail.h>
 
 
@@ -57,6 +58,7 @@
 
 #pragma mark - Private
 
+
 // GIDSignInButton handles the Safari ViewController push, this action is just for UI changes
 - (void)signInTapped {
     self.signInButton.hidden = YES;
@@ -70,27 +72,6 @@
     [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:containerView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0].active = YES;
     [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:containerView attribute:NSLayoutAttributeTop multiplier:1 constant:20].active = YES;
 }
-
-
-#pragma mark - Public
-
-
-// Helper for showing an alert for errors
-- (void)showAlert:(NSString *)title message:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
-                                        message:message
-                                 preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                             style:UIAlertActionStyleDefault
-                           handler:^(UIAlertAction * action) {
-         [alert dismissViewControllerAnimated:YES completion:nil];
-     }];
-    
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 
 
 @end

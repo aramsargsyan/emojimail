@@ -96,9 +96,9 @@
     double positiveProbability = classProbability[@"Pos"].doubleValue;
     if (positiveProbability < 0.2) {
         return @"😡";
-    } else if (positiveProbability < 0.45) {
+    } else if (positiveProbability < 0.3) {
         return @"😠";
-    } else if (positiveProbability < 0.55) {
+    } else if (positiveProbability < 0.5) {
         return @"😐";
     } else if (positiveProbability < 0.8) {
         return @"😀";

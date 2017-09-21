@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Google/SignIn.h>
 
 @interface AuthentificationViewController : UIViewController
-
-- (void)showAlert:(NSString *)title message:(NSString *)message;
 
 @end

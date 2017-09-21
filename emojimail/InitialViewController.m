@@ -8,6 +8,8 @@
 
 #import "InitialViewController.h"
 #import "GoogleSignInManager.h"
+#import "AuthentificationViewController.h"
+#import "HomeViewController.h"
 
 
 @interface InitialViewController ()
@@ -19,13 +21,16 @@
 
 @implementation InitialViewController
 
+#pragma mark - Lifecycle
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureViews];
     
-    
+    [[GoogleSignInManager sharedManager] setHomeViewControllerClass:HomeViewController.class andAuthentificationViewControllerClass:AuthentificationViewController.class];
     [[GoogleSignInManager sharedManager] startGoogleSignInFlowWithNavigationController:self.navigationController];
+    
     [self.activityIndicator startAnimating];
 }
 
@@ -42,7 +47,6 @@
     [NSLayoutConstraint constraintWithItem:self.activityIndicator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0].active = YES;
     [NSLayoutConstraint constraintWithItem:self.activityIndicator attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0].active = YES;
 }
-
 
 
 @end
