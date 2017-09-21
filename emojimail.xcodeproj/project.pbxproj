@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24CFA6241F73C4AA007D5170 /* SentimentPolarity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 24CFA6231F73C379007D5170 /* SentimentPolarity.mlmodel */; };
 		24CFA6281F73C605007D5170 /* SentimentPolarityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CFA6271F73C605007D5170 /* SentimentPolarityManager.m */; };
+		24CFA63E1F743CA6007D5170 /* UIView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CFA63D1F743CA6007D5170 /* UIView+Autolayout.m */; };
 		24F781851F70384300C81BC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781841F70384300C81BC9 /* main.m */; };
 		24F781881F70384300C81BC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781871F70384300C81BC9 /* AppDelegate.m */; };
 		24F781901F70384300C81BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F7818F1F70384300C81BC9 /* Assets.xcassets */; };
@@ -30,6 +31,8 @@
 		24CFA6231F73C379007D5170 /* SentimentPolarity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentPolarity.mlmodel; sourceTree = "<group>"; };
 		24CFA6261F73C605007D5170 /* SentimentPolarityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SentimentPolarityManager.h; sourceTree = "<group>"; };
 		24CFA6271F73C605007D5170 /* SentimentPolarityManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SentimentPolarityManager.m; sourceTree = "<group>"; };
+		24CFA63C1F743CA6007D5170 /* UIView+Autolayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Autolayout.h"; sourceTree = "<group>"; };
+		24CFA63D1F743CA6007D5170 /* UIView+Autolayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Autolayout.m"; sourceTree = "<group>"; };
 		24F781801F70384300C81BC9 /* emojimail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emojimail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F781841F70384300C81BC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24F781861F70384300C81BC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +79,15 @@
 			name = "ML Models";
 			sourceTree = "<group>";
 		};
+		24CFA63F1F743CAE007D5170 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				24CFA63C1F743CA6007D5170 /* UIView+Autolayout.h */,
+				24CFA63D1F743CA6007D5170 /* UIView+Autolayout.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		24F781771F70384300C81BC9 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +116,7 @@
 				24F7819C1F7042E700C81BC9 /* ViewControllers */,
 				24F781B21F727E0D00C81BC9 /* Views */,
 				24F781A01F70433500C81BC9 /* DataSources */,
+				24CFA63F1F743CAE007D5170 /* Utilities */,
 				24F7818F1F70384300C81BC9 /* Assets.xcassets */,
 				24F781911F70384300C81BC9 /* LaunchScreen.storyboard */,
 				24F781941F70384300C81BC9 /* Info.plist */,
@@ -318,6 +331,7 @@
 				24F781B01F727DE600C81BC9 /* MessageTableViewCell.m in Sources */,
 				24F7819F1F70432F00C81BC9 /* MessagesDataSource.m in Sources */,
 				24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */,
+				24CFA63E1F743CA6007D5170 /* UIView+Autolayout.m in Sources */,
 				24F781881F70384300C81BC9 /* AppDelegate.m in Sources */,
 				24CFA6241F73C4AA007D5170 /* SentimentPolarity.mlmodel in Sources */,
 				24F781A41F70456C00C81BC9 /* AuthentificationViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "MessagesDataSource.h"
 #import "MessageTableViewCell.h"
+#import "UIView+Autolayout.h"
 
 
 @interface HomeViewController () <MessagesDataSourceDelegate, UITableViewDelegate>
@@ -16,6 +17,8 @@
 @property (nonatomic) MessagesDataSource *dataSource;
 
 @property (nonatomic) UITableView *messagesTableView;
+
+@property (nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -39,6 +42,7 @@
     }
     
     [self configureTableView];
+    [self configureActivityIndicator];
 }
 
 
@@ -54,12 +58,20 @@
     self.messagesTableView.delegate = self;
     self.dataSource.delegate = self;
     
+    self.messagesTableView.hidden = YES;
+    
     [self.view addSubview:self.messagesTableView];
     self.messagesTableView.translatesAutoresizingMaskIntoConstraints = NO;
-    [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:0].active = YES;
+    [self.messagesTableView autopinEdgesToSuperview];
+}
+
+
+- (void)configureActivityIndicator {
+    self.activityIndicator = [[UIActivityIndicatorView alloc] init];
+    self.activityIndicator.hidesWhenStopped = YES;
+    self.activityIndicator.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.activityIndicator autocenterInSuperview];
+    [self.activityIndicator startAnimating];
 }
 
 
@@ -76,6 +88,8 @@
 
 - (void)refresh {
     [self.messagesTableView reloadData];
+    self.messagesTableView.hidden = NO;
+    [self.activityIndicator stopAnimating];
 }
 
 

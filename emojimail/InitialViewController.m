@@ -10,6 +10,7 @@
 #import "GoogleSignInManager.h"
 #import "AuthentificationViewController.h"
 #import "HomeViewController.h"
+#import "UIView+Autolayout.h"
 
 
 @interface InitialViewController ()
@@ -43,9 +44,7 @@
     self.activityIndicator.color = [UIColor grayColor];
     
     [self.view addSubview:self.activityIndicator];
-    
-    [NSLayoutConstraint constraintWithItem:self.activityIndicator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.activityIndicator attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0].active = YES;
+    [self.activityIndicator autocenterInSuperview];
 }
 
 

@@ -9,6 +9,7 @@
 #import "AuthentificationViewController.h"
 #import <Google/SignIn.h>
 #import <GTLRGmail.h>
+#import "UIView+Autolayout.h"
 
 
 @interface AuthentificationViewController ()
@@ -37,13 +38,19 @@
     // Add the Google sign-in button
     self.signInButton = [[GIDSignInButton alloc] init];
     [self.signInButton addTarget:self action:@selector(signInTapped) forControlEvents:UIControlEventTouchUpInside];
-    [self placeView:self.signInButton inContainerView:self.signInButtonContainerView];
+    
+    [self.signInButtonContainerView addSubview:self.signInButton];
+    self.signInButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.signInButton placeInSuperviewUpperCenter];
     
     // Add the activity indicator and hide it
     self.activityIndicator = [[UIActivityIndicatorView alloc] init];
     self.activityIndicator.color = [UIColor grayColor];
     self.activityIndicator.hidesWhenStopped = YES;
-    [self placeView:self.activityIndicator inContainerView:self.signInButtonContainerView];
+    
+    [self.signInButtonContainerView addSubview:self.activityIndicator];
+    self.activityIndicator.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.activityIndicator placeInSuperviewUpperCenter];
 }
 
 
@@ -63,14 +70,6 @@
 - (void)signInTapped {
     self.signInButton.hidden = YES;
     [self.activityIndicator startAnimating];
-}
-
-
-- (void)placeView:(UIView *)view inContainerView:(UIView *)containerView {
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-    [containerView addSubview:view];
-    [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:containerView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0].active = YES;
-    [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:containerView attribute:NSLayoutAttributeTop multiplier:1 constant:20].active = YES;
 }
 
 
