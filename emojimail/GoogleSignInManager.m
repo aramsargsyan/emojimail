@@ -28,7 +28,7 @@
 #pragma mark - Public
 
 
-+ (instancetype)sharedInstance {
++ (instancetype)sharedManager {
     static GoogleSignInManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

@@ -29,15 +29,16 @@
 
 #pragma mark - Lifecycle
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Add the sign-in button.
+    // Add the Google sign-in button
     self.signInButton = [[GIDSignInButton alloc] init];
     [self.signInButton addTarget:self action:@selector(signInTapped) forControlEvents:UIControlEventTouchUpInside];
     [self placeView:self.signInButton inContainerView:self.signInButtonContainerView];
     
-    // Add the activity indicator and hide it.
+    // Add the activity indicator and hide it
     self.activityIndicator = [[UIActivityIndicatorView alloc] init];
     self.activityIndicator.color = [UIColor grayColor];
     self.activityIndicator.hidesWhenStopped = YES;
@@ -72,6 +73,7 @@
 
 
 #pragma mark - Public
+
 
 // Helper for showing an alert for errors
 - (void)showAlert:(NSString *)title message:(NSString *)message {

@@ -36,7 +36,7 @@
     if (self) {
         // Initialize the service object.
         self.service = [[GTLRGmailService alloc] init];
-        self.service.authorizer = [GoogleSignInManager sharedInstance].user.authentication.fetcherAuthorizer;
+        self.service.authorizer = [GoogleSignInManager sharedManager].user.authentication.fetcherAuthorizer;
         
         self.messages = [NSMutableArray array];
         
@@ -96,6 +96,8 @@
                 if (error) {
                     NSLog(@"[MessagesDataSource] failed to get details for message with id %@", message.identifier);
                 } else {
+                    // TODO determine emoji here and set to new Property for GTLRGmail_Message
+                    
                     NSInteger mainIndex = [self.messages indexOfObject:message];
                     self.messages[mainIndex] = newMessage;
                     if ([self areStatusesEntirelyPositive:statusArray]) {

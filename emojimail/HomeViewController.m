@@ -10,7 +10,6 @@
 #import "MessagesDataSource.h"
 #import "MessageTableViewCell.h"
 
-
 @interface HomeViewController () <MessagesDataSourceDelegate, UITableViewDelegate>
 
 @property (nonatomic) MessagesDataSource *dataSource;
@@ -27,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     NSBundle *bundle = [NSBundle mainBundle];
@@ -51,6 +51,7 @@
     self.dataSource.delegate = self;
     
     [self.view addSubview:self.messagesTableView];
+    self.messagesTableView.translatesAutoresizingMaskIntoConstraints = NO;
     [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0].active = YES;
     [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0].active = YES;
     [NSLayoutConstraint constraintWithItem:self.messagesTableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0].active = YES;

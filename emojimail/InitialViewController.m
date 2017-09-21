@@ -25,7 +25,7 @@
     [self configureViews];
     
     
-    [[GoogleSignInManager sharedInstance] startGoogleSignInFlowWithNavigationController:self.navigationController];
+    [[GoogleSignInManager sharedManager] startGoogleSignInFlowWithNavigationController:self.navigationController];
     [self.activityIndicator startAnimating];
 }
 

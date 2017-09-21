@@ -14,7 +14,7 @@
 
 @property (nonatomic, readonly) GIDGoogleUser *user;
 
-+ (instancetype)sharedInstance;
++ (instancetype)sharedManager;
 
 - (void)startGoogleSignInFlowWithNavigationController:(UINavigationController *)navigationController;
 
