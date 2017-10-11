@@ -69,6 +69,7 @@
 - (void)configureActivityIndicator {
     self.activityIndicator = [[UIActivityIndicatorView alloc] init];
     self.activityIndicator.hidesWhenStopped = YES;
+    [self.view addSubview:self.activityIndicator];
     self.activityIndicator.translatesAutoresizingMaskIntoConstraints = NO;
     [self.activityIndicator autocenterInSuperview];
     [self.activityIndicator startAnimating];
