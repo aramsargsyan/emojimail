@@ -5,7 +5,7 @@ Requires iOS 11+
 
 # Build instructions
 1. Clone the repository
-2. (optional) Install Cocoapods dependency manager if not installed
+2. Install Cocoapods dependency manager if not installed
 3. In Terminal, cd into the repository directory
 4. Run pod install
 5. Open emojimail.xcworkspace
