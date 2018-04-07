@@ -58,8 +58,17 @@
     [super viewWillAppear:animated];
     
     // Reset button/activity indicator states
+    [self stopActivityIndicator];
+}
+
+- (void)stopActivityIndicator {
     [self.activityIndicator stopAnimating];
     self.signInButton.hidden = NO;
+}
+
+- (void)startActivityIndicator {
+    self.signInButton.hidden = YES;
+    [self.activityIndicator startAnimating];
 }
 
 
@@ -68,8 +77,7 @@
 
 // GIDSignInButton handles the Safari ViewController push, this action is just for UI changes
 - (void)signInTapped {
-    self.signInButton.hidden = YES;
-    [self.activityIndicator startAnimating];
+    [self startActivityIndicator];
 }
 
 

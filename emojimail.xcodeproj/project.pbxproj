@@ -28,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		1690292B101CE03A9D5863B8 /* libPods-emojimail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-emojimail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		243305322078CC0A00D6A19C /* AuthentificationViewInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AuthentificationViewInterface.h; path = /Users/aram/Documents/emojimail/emojimail/AuthentificationViewInterface.h; sourceTree = "<absolute>"; };
 		24CFA6231F73C379007D5170 /* SentimentPolarity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentPolarity.mlmodel; sourceTree = "<group>"; };
 		24CFA6261F73C605007D5170 /* SentimentPolarityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SentimentPolarityManager.h; sourceTree = "<group>"; };
 		24CFA6271F73C605007D5170 /* SentimentPolarityManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SentimentPolarityManager.m; sourceTree = "<group>"; };
@@ -113,8 +114,7 @@
 				24F781871F70384300C81BC9 /* AppDelegate.m */,
 				24CFA6251F73C5D5007D5170 /* ML Models */,
 				24F781A91F705EDA00C81BC9 /* Managers */,
-				24F7819C1F7042E700C81BC9 /* ViewControllers */,
-				24F781B21F727E0D00C81BC9 /* Views */,
+				24F781B21F727E0D00C81BC9 /* View */,
 				24F781A01F70433500C81BC9 /* DataSources */,
 				24CFA63F1F743CAE007D5170 /* Utilities */,
 				24F7818F1F70384300C81BC9 /* Assets.xcassets */,
@@ -132,20 +132,6 @@
 				24F781841F70384300C81BC9 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		24F7819C1F7042E700C81BC9 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				24F781B31F72801400C81BC9 /* InitialViewController.h */,
-				24F781B41F72801400C81BC9 /* InitialViewController.m */,
-				24F781AA1F70621900C81BC9 /* HomeViewController.h */,
-				24F781AB1F70621900C81BC9 /* HomeViewController.m */,
-				24F781A11F70456C00C81BC9 /* AuthentificationViewController.h */,
-				24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */,
-				24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */,
-			);
-			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		24F781A01F70433500C81BC9 /* DataSources */ = {
@@ -168,14 +154,22 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
-		24F781B21F727E0D00C81BC9 /* Views */ = {
+		24F781B21F727E0D00C81BC9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				243305322078CC0A00D6A19C /* AuthentificationViewInterface.h */,
+				24F781A11F70456C00C81BC9 /* AuthentificationViewController.h */,
+				24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */,
+				24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */,
 				24F781AD1F727DE600C81BC9 /* MessageTableViewCell.h */,
 				24F781AE1F727DE600C81BC9 /* MessageTableViewCell.m */,
 				24F781AF1F727DE600C81BC9 /* MessageTableViewCell.xib */,
+				24F781B31F72801400C81BC9 /* InitialViewController.h */,
+				24F781B41F72801400C81BC9 /* InitialViewController.m */,
+				24F781AA1F70621900C81BC9 /* HomeViewController.h */,
+				24F781AB1F70621900C81BC9 /* HomeViewController.m */,
 			);
-			name = Views;
+			name = View;
 			sourceTree = "<group>";
 		};
 		5D17D6A271D91EBA2D2AF4BB /* Frameworks */ = {
