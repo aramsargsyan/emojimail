@@ -6,9 +6,13 @@
 //  Copyright © 2017 Aram Sargsyan. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
+#import "AuthentificationPresenter.h"
 
 
 @interface InitialViewController : UIViewController
+
+@property AuthentificationPresenter *presenter;
 
 @end

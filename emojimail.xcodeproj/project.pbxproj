@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		243305352078CCF000D6A19C /* AppBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 243305342078CCF000D6A19C /* AppBuilder.m */; };
+		243305392078D28F00D6A19C /* AuthentificationWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 243305382078D28F00D6A19C /* AuthentificationWireframe.m */; };
+		2433053C2078D67900D6A19C /* RootWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433053B2078D67900D6A19C /* RootWireframe.m */; };
+		2433053F2078D9A500D6A19C /* AuthentificationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433053E2078D9A500D6A19C /* AuthentificationPresenter.m */; };
+		243305422078D9B900D6A19C /* AuthentificationInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 243305412078D9B900D6A19C /* AuthentificationInteractor.m */; };
 		24CFA6241F73C4AA007D5170 /* SentimentPolarity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 24CFA6231F73C379007D5170 /* SentimentPolarity.mlmodel */; };
 		24CFA6281F73C605007D5170 /* SentimentPolarityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CFA6271F73C605007D5170 /* SentimentPolarityManager.m */; };
 		24CFA63E1F743CA6007D5170 /* UIView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CFA63D1F743CA6007D5170 /* UIView+Autolayout.m */; };
@@ -16,8 +21,8 @@
 		24F781931F70384300C81BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F781911F70384300C81BC9 /* LaunchScreen.storyboard */; };
 		24F7819B1F70384E00C81BC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */; };
 		24F7819F1F70432F00C81BC9 /* MessagesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F7819E1F70432F00C81BC9 /* MessagesDataSource.m */; };
-		24F781A41F70456C00C81BC9 /* AuthentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */; };
-		24F781A51F70456C00C81BC9 /* AuthentificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */; };
+		24F781A41F70456C00C81BC9 /* GoogleSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A21F70456C00C81BC9 /* GoogleSignInViewController.m */; };
+		24F781A51F70456C00C81BC9 /* GoogleSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24F781A31F70456C00C81BC9 /* GoogleSignInViewController.xib */; };
 		24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */; };
 		24F781AC1F70621900C81BC9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781AB1F70621900C81BC9 /* HomeViewController.m */; };
 		24F781B01F727DE600C81BC9 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781AE1F727DE600C81BC9 /* MessageTableViewCell.m */; };
@@ -28,12 +33,24 @@
 
 /* Begin PBXFileReference section */
 		1690292B101CE03A9D5863B8 /* libPods-emojimail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-emojimail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2415D5FB2079088E00095E9B /* AuthentificationModuleInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationModuleInterface.h; sourceTree = "<group>"; };
 		243305322078CC0A00D6A19C /* AuthentificationViewInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AuthentificationViewInterface.h; path = /Users/aram/Documents/emojimail/emojimail/AuthentificationViewInterface.h; sourceTree = "<absolute>"; };
+		243305332078CCF000D6A19C /* AppBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBuilder.h; sourceTree = "<group>"; };
+		243305342078CCF000D6A19C /* AppBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBuilder.m; sourceTree = "<group>"; };
+		243305372078D28F00D6A19C /* AuthentificationWireframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationWireframe.h; sourceTree = "<group>"; };
+		243305382078D28F00D6A19C /* AuthentificationWireframe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthentificationWireframe.m; sourceTree = "<group>"; };
+		2433053A2078D67900D6A19C /* RootWireframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootWireframe.h; sourceTree = "<group>"; };
+		2433053B2078D67900D6A19C /* RootWireframe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootWireframe.m; sourceTree = "<group>"; };
+		2433053D2078D9A500D6A19C /* AuthentificationPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationPresenter.h; sourceTree = "<group>"; };
+		2433053E2078D9A500D6A19C /* AuthentificationPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthentificationPresenter.m; sourceTree = "<group>"; };
+		243305402078D9B900D6A19C /* AuthentificationInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationInteractor.h; sourceTree = "<group>"; };
+		243305412078D9B900D6A19C /* AuthentificationInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthentificationInteractor.m; sourceTree = "<group>"; };
 		24CFA6231F73C379007D5170 /* SentimentPolarity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentPolarity.mlmodel; sourceTree = "<group>"; };
 		24CFA6261F73C605007D5170 /* SentimentPolarityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SentimentPolarityManager.h; sourceTree = "<group>"; };
 		24CFA6271F73C605007D5170 /* SentimentPolarityManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SentimentPolarityManager.m; sourceTree = "<group>"; };
 		24CFA63C1F743CA6007D5170 /* UIView+Autolayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Autolayout.h"; sourceTree = "<group>"; };
 		24CFA63D1F743CA6007D5170 /* UIView+Autolayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Autolayout.m"; sourceTree = "<group>"; };
+		24EE10252078FEB7004E6FB2 /* AuthentificationInteractorIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationInteractorIO.h; sourceTree = "<group>"; };
 		24F781801F70384300C81BC9 /* emojimail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emojimail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F781841F70384300C81BC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24F781861F70384300C81BC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,9 +61,9 @@
 		24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		24F7819D1F70432F00C81BC9 /* MessagesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesDataSource.h; sourceTree = "<group>"; };
 		24F7819E1F70432F00C81BC9 /* MessagesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesDataSource.m; sourceTree = "<group>"; };
-		24F781A11F70456C00C81BC9 /* AuthentificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthentificationViewController.h; sourceTree = "<group>"; };
-		24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthentificationViewController.m; sourceTree = "<group>"; };
-		24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthentificationViewController.xib; sourceTree = "<group>"; };
+		24F781A11F70456C00C81BC9 /* GoogleSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleSignInViewController.h; sourceTree = "<group>"; };
+		24F781A21F70456C00C81BC9 /* GoogleSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleSignInViewController.m; sourceTree = "<group>"; };
+		24F781A31F70456C00C81BC9 /* GoogleSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleSignInViewController.xib; sourceTree = "<group>"; };
 		24F781A61F705ED200C81BC9 /* GoogleSignInManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleSignInManager.h; sourceTree = "<group>"; };
 		24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleSignInManager.m; sourceTree = "<group>"; };
 		24F781AA1F70621900C81BC9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -72,6 +89,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		243305362078D1F100D6A19C /* Authentification Module */ = {
+			isa = PBXGroup;
+			children = (
+				243305372078D28F00D6A19C /* AuthentificationWireframe.h */,
+				243305382078D28F00D6A19C /* AuthentificationWireframe.m */,
+				2415D5FB2079088E00095E9B /* AuthentificationModuleInterface.h */,
+				2433053D2078D9A500D6A19C /* AuthentificationPresenter.h */,
+				2433053E2078D9A500D6A19C /* AuthentificationPresenter.m */,
+				24EE10252078FEB7004E6FB2 /* AuthentificationInteractorIO.h */,
+				243305402078D9B900D6A19C /* AuthentificationInteractor.h */,
+				243305412078D9B900D6A19C /* AuthentificationInteractor.m */,
+				24F781B31F72801400C81BC9 /* InitialViewController.h */,
+				24F781B41F72801400C81BC9 /* InitialViewController.m */,
+				243305322078CC0A00D6A19C /* AuthentificationViewInterface.h */,
+				24F781A11F70456C00C81BC9 /* GoogleSignInViewController.h */,
+				24F781A21F70456C00C81BC9 /* GoogleSignInViewController.m */,
+				24F781A31F70456C00C81BC9 /* GoogleSignInViewController.xib */,
+			);
+			name = "Authentification Module";
+			sourceTree = "<group>";
+		};
 		24CFA6251F73C5D5007D5170 /* ML Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +150,11 @@
 			children = (
 				24F781861F70384300C81BC9 /* AppDelegate.h */,
 				24F781871F70384300C81BC9 /* AppDelegate.m */,
+				243305332078CCF000D6A19C /* AppBuilder.h */,
+				243305342078CCF000D6A19C /* AppBuilder.m */,
+				2433053A2078D67900D6A19C /* RootWireframe.h */,
+				2433053B2078D67900D6A19C /* RootWireframe.m */,
+				243305362078D1F100D6A19C /* Authentification Module */,
 				24CFA6251F73C5D5007D5170 /* ML Models */,
 				24F781A91F705EDA00C81BC9 /* Managers */,
 				24F781B21F727E0D00C81BC9 /* View */,
@@ -157,17 +200,11 @@
 		24F781B21F727E0D00C81BC9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				243305322078CC0A00D6A19C /* AuthentificationViewInterface.h */,
-				24F781A11F70456C00C81BC9 /* AuthentificationViewController.h */,
-				24F781A21F70456C00C81BC9 /* AuthentificationViewController.m */,
-				24F781A31F70456C00C81BC9 /* AuthentificationViewController.xib */,
+				24F781AA1F70621900C81BC9 /* HomeViewController.h */,
+				24F781AB1F70621900C81BC9 /* HomeViewController.m */,
 				24F781AD1F727DE600C81BC9 /* MessageTableViewCell.h */,
 				24F781AE1F727DE600C81BC9 /* MessageTableViewCell.m */,
 				24F781AF1F727DE600C81BC9 /* MessageTableViewCell.xib */,
-				24F781B31F72801400C81BC9 /* InitialViewController.h */,
-				24F781B41F72801400C81BC9 /* InitialViewController.m */,
-				24F781AA1F70621900C81BC9 /* HomeViewController.h */,
-				24F781AB1F70621900C81BC9 /* HomeViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -252,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F781931F70384300C81BC9 /* LaunchScreen.storyboard in Resources */,
-				24F781A51F70456C00C81BC9 /* AuthentificationViewController.xib in Resources */,
+				24F781A51F70456C00C81BC9 /* GoogleSignInViewController.xib in Resources */,
 				24F781B11F727DE600C81BC9 /* MessageTableViewCell.xib in Resources */,
 				24F7819B1F70384E00C81BC9 /* GoogleService-Info.plist in Resources */,
 				24F781901F70384300C81BC9 /* Assets.xcassets in Resources */,
@@ -292,7 +329,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DF13145868BC5BEF50AA2A8A /* [CP] Copy Pods Resources */ = {
@@ -324,14 +361,19 @@
 				24F781B51F72801400C81BC9 /* InitialViewController.m in Sources */,
 				24F781B01F727DE600C81BC9 /* MessageTableViewCell.m in Sources */,
 				24F7819F1F70432F00C81BC9 /* MessagesDataSource.m in Sources */,
+				243305422078D9B900D6A19C /* AuthentificationInteractor.m in Sources */,
 				24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */,
+				2433053F2078D9A500D6A19C /* AuthentificationPresenter.m in Sources */,
 				24CFA63E1F743CA6007D5170 /* UIView+Autolayout.m in Sources */,
 				24F781881F70384300C81BC9 /* AppDelegate.m in Sources */,
 				24CFA6241F73C4AA007D5170 /* SentimentPolarity.mlmodel in Sources */,
-				24F781A41F70456C00C81BC9 /* AuthentificationViewController.m in Sources */,
+				24F781A41F70456C00C81BC9 /* GoogleSignInViewController.m in Sources */,
+				2433053C2078D67900D6A19C /* RootWireframe.m in Sources */,
 				24CFA6281F73C605007D5170 /* SentimentPolarityManager.m in Sources */,
 				24F781AC1F70621900C81BC9 /* HomeViewController.m in Sources */,
 				24F781851F70384300C81BC9 /* main.m in Sources */,
+				243305352078CCF000D6A19C /* AppBuilder.m in Sources */,
+				243305392078D28F00D6A19C /* AuthentificationWireframe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

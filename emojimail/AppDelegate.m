@@ -7,13 +7,15 @@
 //
 
 #import "AppDelegate.h"
-#import "InitialViewController.h"
+//#import "InitialViewController.h"
 #import <Google/SignIn.h>
-#import "GoogleSignInManager.h"
-
+//#import "GoogleSignInManager.h"
+#import "AppBuilder.h"
 
 
 @interface AppDelegate ()
+
+@property AppBuilder *builder;
 
 @end
 
@@ -21,8 +23,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
+    /*
     // Configure Google Context
     NSError* configureError;
     [[GGLContext sharedInstance] configureWithError: &configureError];
@@ -36,6 +38,14 @@
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+     */
+    
+    self.builder = [[AppBuilder alloc] init];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[UINavigationController alloc] init];
+    [self.window makeKeyAndVisible];
+    
+    [self.builder installRootViewControllerIntoWindow:self.window];
     
     return YES;
 }

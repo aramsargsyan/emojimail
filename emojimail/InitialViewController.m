@@ -7,9 +7,6 @@
 //
 
 #import "InitialViewController.h"
-#import "GoogleSignInManager.h"
-#import "AuthentificationViewController.h"
-#import "HomeViewController.h"
 #import "UIView+Autolayout.h"
 
 
@@ -28,11 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureViews];
-    
-    [[GoogleSignInManager sharedManager] setHomeViewControllerClass:HomeViewController.class andAuthentificationViewControllerClass:AuthentificationViewController.class];
-    [[GoogleSignInManager sharedManager] startGoogleSignInFlowWithNavigationController:self.navigationController];
-    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
     [self.activityIndicator startAnimating];
+    [self.presenter initialViewAppeared];
 }
 
 

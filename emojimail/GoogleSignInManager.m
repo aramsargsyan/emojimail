@@ -20,6 +20,8 @@
 
 @property (nonatomic, readwrite) GIDGoogleUser *user;
 
+@property (nonatomic, copy) void(^completion)(BOOL);
+
 @end
 
 
@@ -62,6 +64,23 @@
     }
 }
 
+- (void)attemptSilentGoogleSignInCompletion:(void(^)(BOOL signedIn))completion {
+    // Configure Google Sign-in.
+    GIDSignIn* signIn = [GIDSignIn sharedInstance];
+    signIn.delegate = self;
+    signIn.uiDelegate = self;
+    signIn.scopes = [NSArray arrayWithObjects:kGTLRAuthScopeGmailReadonly, nil];
+    
+    
+    if (signIn.hasAuthInKeychain) {
+        self.completion = completion;
+        [signIn signInSilently];
+    } else {
+        completion(NO);
+        //[self.navigationController setViewControllers:@[[[self.authentificationViewControllerClass alloc] init]] animated:NO];
+    }
+}
+
 
 #pragma mark - Private
 
@@ -92,6 +111,12 @@
 
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
     self.user = user;
+    
+    if (self.completion) {
+        BOOL signedIn = error ? NO : YES;
+        self.completion(signedIn);
+    }
+    
     if (error) {
         if (self.googleSignInViewController) {
             [self.googleSignInViewController dismissViewControllerAnimated:YES completion:^{

@@ -39,4 +39,6 @@
  */
 - (void)startGoogleSignInFlowWithNavigationController:(UINavigationController *)navigationController;
 
+- (void)attemptSilentGoogleSignInCompletion:(void(^)(BOOL signedIn))completion;
+
 @end

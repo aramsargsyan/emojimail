@@ -1,5 +1,5 @@
 //
-//  AuthentificationViewInterface.h
+//  AppBuilder.h
 //  emojimail
 //
 //  Created by Aram Sargsyan on 4/7/18.
@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
+@interface AppBuilder : NSObject
 
-@protocol AuthentificationViewInterface <NSObject>
-
-- (void)showLoading;
+- (void)installRootViewControllerIntoWindow:(UIWindow *)window;
 
 @end

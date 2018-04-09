@@ -1,18 +1,19 @@
 //
-//  AuthentificationViewController.m
+//  GoogleSignInViewController.m
 //  emojimail
 //
 //  Created by Aram Sargsyan on 9/18/17.
 //  Copyright © 2017 Aram Sargsyan. All rights reserved.
 //
 
-#import "AuthentificationViewController.h"
+#import "GoogleSignInViewController.h"
 #import <Google/SignIn.h>
 #import <GTLRGmail.h>
 #import "UIView+Autolayout.h"
+#import "AuthentificationPresenter.h"
 
 
-@interface AuthentificationViewController ()
+@interface GoogleSignInViewController ()
 
 // Low alpha image view for showing the google logo as background
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
@@ -27,7 +28,7 @@
 @end
 
 
-@implementation AuthentificationViewController
+@implementation GoogleSignInViewController
 
 #pragma mark - Lifecycle
 
@@ -61,6 +62,9 @@
     [self stopActivityIndicator];
 }
 
+
+#pragma mark - Private
+
 - (void)stopActivityIndicator {
     [self.activityIndicator stopAnimating];
     self.signInButton.hidden = NO;
@@ -71,14 +75,16 @@
     [self.activityIndicator startAnimating];
 }
 
-
-#pragma mark - Private
-
-
 // GIDSignInButton handles the Safari ViewController push, this action is just for UI changes
 - (void)signInTapped {
-    [self startActivityIndicator];
+    [self.eventHandler signInButtonAction];
 }
 
+
+#pragma mark - AuthentificationViewInterface
+
+- (void)showLoading {
+    [self startActivityIndicator];
+}
 
 @end
