@@ -22,18 +22,27 @@
 }
 
 - (void)signInButtonAction {
+    [self.input attemptedGoogleSignIn];
     [self.view showLoading];
 }
 
 #pragma mark - AuthentificationInteractorOutput
 
 - (void)silentGoogleSignInSucceded {
-    NSLog(@"[%@] silent Google sign in succeded", NSStringFromClass(self.class));
+    NSLog(@"[%@] SILENT Google sign in succeded", NSStringFromClass(self.class));
 }
 
 - (void)silentGoogleSignInFailed {
-    NSLog(@"[%@] silent Google sign in failed, showing Google sign in page", NSStringFromClass(self.class));
+    NSLog(@"[%@] SILENT Google sign in failed, showing Google sign in page", NSStringFromClass(self.class));
     [self.wireframe presentGoogleSignInView];
+}
+
+- (void)googleSignInSucceded {
+    NSLog(@"[%@] Google sign in succeded", NSStringFromClass(self.class));
+}
+
+- (void)googleSignInFailed {
+    NSLog(@"[%@] Google sign in failed", NSStringFromClass(self.class));
 }
 
 @end

@@ -13,6 +13,7 @@
 
 @interface InitialViewController : UIViewController
 
-@property AuthentificationPresenter *presenter;
+//TODO: Create a protocol and use id<> here
+@property AuthentificationPresenter *eventHandler;
 
 @end

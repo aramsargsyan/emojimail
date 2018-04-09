@@ -30,7 +30,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [self.activityIndicator startAnimating];
-    [self.presenter initialViewAppeared];
+    [self.eventHandler initialViewAppeared];
 }
 
 

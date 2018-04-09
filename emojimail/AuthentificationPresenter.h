@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthentificationInteractor.h"
-#import "AuthentificationViewInterface.h"
+#import "GoogleSignInViewInterface.h"
 #import <UIKit/UIKit.h>
 @class AuthentificationWireframe;
 
@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) id<AuthentificationInteractorInput> input;
 @property (nonatomic, weak) AuthentificationWireframe *wireframe;
-@property (nonatomic, strong) UIViewController<AuthentificationViewInterface> *view;
+@property (nonatomic, strong) UIViewController<GoogleSignInViewInterface> *view;
 
 - (void)initialViewAppeared;
 

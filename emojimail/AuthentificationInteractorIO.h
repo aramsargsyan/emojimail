@@ -14,6 +14,8 @@
 
 - (void)attemptSilentGoogleSignIn;
 
+- (void)attemptedGoogleSignIn;
+
 @end
 
 
@@ -22,5 +24,9 @@
 - (void)silentGoogleSignInSucceded;
 
 - (void)silentGoogleSignInFailed;
+
+- (void)googleSignInSucceded;
+
+- (void)googleSignInFailed;
 
 @end

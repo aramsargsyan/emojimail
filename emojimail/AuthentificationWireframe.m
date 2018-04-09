@@ -23,7 +23,7 @@
 
 - (void)presentInitialViewFromWindow:(UIWindow *)window {
     InitialViewController *initialViewController = [self initialViewController];
-    initialViewController.presenter = self.presenter;
+    initialViewController.eventHandler = self.presenter;
     
     [self.rootWireframe showRootViewController:initialViewController inWindow:window];
     self.navigationController = initialViewController.navigationController;
@@ -31,6 +31,7 @@
 
 - (void)presentGoogleSignInView {
     GoogleSignInViewController *googleSignInViewController = [self googleSignInViewController];
+    googleSignInViewController.eventHandler = self.presenter;
     
     [self.navigationController presentViewController:googleSignInViewController animated:YES completion:nil];
 }

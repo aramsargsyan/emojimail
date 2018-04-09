@@ -8,11 +8,11 @@
 
 
 #import <UIKit/UIKit.h>
-#import "AuthentificationViewInterface.h"
+#import "GoogleSignInViewInterface.h"
 @class AuthentificationPresenter;
 
 
-@interface GoogleSignInViewController : UIViewController <AuthentificationViewInterface>
+@interface GoogleSignInViewController : UIViewController <GoogleSignInViewInterface>
 
 @property (nonatomic, strong) AuthentificationPresenter *eventHandler;
 

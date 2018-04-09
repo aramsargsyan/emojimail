@@ -16,13 +16,23 @@
 
 
 - (void)attemptSilentGoogleSignIn {
-    [[GoogleSignInManager sharedManager] attemptSilentGoogleSignInCompletion:^(BOOL signedIn) {
+    [[GoogleSignInManager sharedManager] attemptSilentGoogleSignInWithCompletion:^(BOOL signedIn) {
         if (signedIn) {
             [self.output silentGoogleSignInSucceded];
         } else {
             [self.output silentGoogleSignInFailed];
         }
     }];
+}
+
+- (void)attemptedGoogleSignIn {
+    [GoogleSignInManager sharedManager].completion = ^(BOOL signedIn) {
+        if (signedIn) {
+            [self.output googleSignInSucceded];
+        } else {
+            [self.output googleSignInFailed];
+        }
+    };
 }
 
 @end

@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		1690292B101CE03A9D5863B8 /* libPods-emojimail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-emojimail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2415D5FB2079088E00095E9B /* AuthentificationModuleInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationModuleInterface.h; sourceTree = "<group>"; };
-		243305322078CC0A00D6A19C /* AuthentificationViewInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AuthentificationViewInterface.h; path = /Users/aram/Documents/emojimail/emojimail/AuthentificationViewInterface.h; sourceTree = "<absolute>"; };
+		243305322078CC0A00D6A19C /* GoogleSignInViewInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GoogleSignInViewInterface.h; path = /Users/aram/Documents/emojimail/emojimail/GoogleSignInViewInterface.h; sourceTree = "<absolute>"; };
 		243305332078CCF000D6A19C /* AppBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBuilder.h; sourceTree = "<group>"; };
 		243305342078CCF000D6A19C /* AppBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBuilder.m; sourceTree = "<group>"; };
 		243305372078D28F00D6A19C /* AuthentificationWireframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationWireframe.h; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				243305412078D9B900D6A19C /* AuthentificationInteractor.m */,
 				24F781B31F72801400C81BC9 /* InitialViewController.h */,
 				24F781B41F72801400C81BC9 /* InitialViewController.m */,
-				243305322078CC0A00D6A19C /* AuthentificationViewInterface.h */,
+				243305322078CC0A00D6A19C /* GoogleSignInViewInterface.h */,
 				24F781A11F70456C00C81BC9 /* GoogleSignInViewController.h */,
 				24F781A21F70456C00C81BC9 /* GoogleSignInViewController.m */,
 				24F781A31F70456C00C81BC9 /* GoogleSignInViewController.xib */,

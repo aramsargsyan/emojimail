@@ -24,12 +24,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    /*
+    
     // Configure Google Context
     NSError* configureError;
     [[GGLContext sharedInstance] configureWithError: &configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
+    /*
     // Configure the main navigation controller
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[InitialViewController alloc] init]];
     [navigationController setNavigationBarHidden:YES animated:NO];

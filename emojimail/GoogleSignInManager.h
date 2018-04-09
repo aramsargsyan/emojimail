@@ -39,6 +39,8 @@
  */
 - (void)startGoogleSignInFlowWithNavigationController:(UINavigationController *)navigationController;
 
-- (void)attemptSilentGoogleSignInCompletion:(void(^)(BOOL signedIn))completion;
+- (void)attemptSilentGoogleSignInWithCompletion:(void(^)(BOOL signedIn))completion;
+
+@property (nonatomic, copy) void(^completion)(BOOL);
 
 @end

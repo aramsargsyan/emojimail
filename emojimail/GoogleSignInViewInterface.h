@@ -1,5 +1,5 @@
 //
-//  AuthentificationViewInterface.h
+//  GoogleSignInViewInterface.h
 //  emojimail
 //
 //  Created by Aram Sargsyan on 4/7/18.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol AuthentificationViewInterface <NSObject>
+@protocol GoogleSignInViewInterface <NSObject>
 
 - (void)showLoading;
 
