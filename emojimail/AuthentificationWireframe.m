@@ -24,6 +24,7 @@
 - (void)presentInitialViewFromWindow:(UIWindow *)window {
     InitialViewController *initialViewController = [self initialViewController];
     initialViewController.eventHandler = self.presenter;
+    self.presenter.initialView = initialViewController;
     
     [self.rootWireframe showRootViewController:initialViewController inWindow:window];
     self.navigationController = initialViewController.navigationController;
@@ -32,6 +33,7 @@
 - (void)presentGoogleSignInView {
     GoogleSignInViewController *googleSignInViewController = [self googleSignInViewController];
     googleSignInViewController.eventHandler = self.presenter;
+    self.presenter.googleSignInView = googleSignInViewController;
     
     [self.navigationController presentViewController:googleSignInViewController animated:YES completion:nil];
 }
@@ -42,6 +44,10 @@
 
 - (GoogleSignInViewController *)googleSignInViewController {
     return [[GoogleSignInViewController alloc] init];
+}
+
+- (void)authentificationSuccededFromViewController:(UIViewController *)viewController {
+    [self.moduleDelegate authentificationModuleSuccededFromViewController:viewController];
 }
 
 @end

@@ -1,18 +1,18 @@
 //
-//  HomeViewController.m
+//  MessageListViewController.m
 //  emojimail
 //
 //  Created by Aram Sargsyan on 9/19/17.
 //  Copyright © 2017 Aram Sargsyan. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "MessageListViewController.h"
 #import "MessagesDataSource.h"
 #import "MessageTableViewCell.h"
 #import "UIView+Autolayout.h"
 
 
-@interface HomeViewController () <MessagesDataSourceDelegate, UITableViewDelegate>
+@interface MessageListViewController () <MessagesDataSourceDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) MessagesDataSource *dataSource;
 
@@ -23,7 +23,7 @@
 @end
 
 
-@implementation HomeViewController
+@implementation MessageListViewController
 
 #pragma mark - Lifecycle
 
@@ -33,6 +33,17 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self configureNavigationBar];
+    [self configureTableView];
+    [self configureActivityIndicator];
+    
+    [self.eventHandler updateTableView];
+}
+
+
+#pragma mark - Views
+
+- (void)configureNavigationBar {
     NSBundle *bundle = [NSBundle mainBundle];
     NSDictionary *info = [bundle infoDictionary];
     self.navigationItem.title = [info objectForKey:@"CFBundleDisplayName"];
@@ -40,23 +51,16 @@
     if (self.navigationController) {
         [self.navigationController setNavigationBarHidden:NO animated:NO];
     }
-    
-    [self configureTableView];
-    [self configureActivityIndicator];
 }
-
-
-#pragma mark - Views
-
 
 - (void)configureTableView {
     self.messagesTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.messagesTableView registerNib:[UINib nibWithNibName:NSStringFromClass(MessageTableViewCell.class) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[MessageTableViewCell defaultReuseIdentifier]];
     
-    self.dataSource = [[MessagesDataSource alloc] init];
-    self.messagesTableView.dataSource = self.dataSource;
-    self.messagesTableView.delegate = self;
-    self.dataSource.delegate = self;
+//    self.dataSource = [[MessagesDataSource alloc] init];
+//    self.messagesTableView.dataSource = self;
+//    self.messagesTableView.delegate = self;
+//    self.dataSource.delegate = self;
     
     self.messagesTableView.hidden = YES;
     
@@ -74,6 +78,12 @@
     [self.activityIndicator autocenterInSuperview];
     [self.activityIndicator startAnimating];
 }
+
+#pragma mark - UITableViewDataSource
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//}
 
 
 #pragma mark - UITableViewDelegate

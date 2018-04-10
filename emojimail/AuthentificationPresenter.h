@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) id<AuthentificationInteractorInput> input;
 @property (nonatomic, weak) AuthentificationWireframe *wireframe;
-@property (nonatomic, strong) UIViewController<GoogleSignInViewInterface> *view;
+@property (nonatomic, weak) UIViewController<GoogleSignInViewInterface> *googleSignInView;
+@property (nonatomic, weak) UIViewController *initialView;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import <GTLRGmail.h>
 
 
@@ -19,7 +18,7 @@
 @end
 
 
-@interface MessagesDataSource : NSObject <UITableViewDataSource>
+@interface MessagesDataSource : NSObject
 
 @property (weak, nonatomic) id<MessagesDataSourceDelegate> delegate;
 

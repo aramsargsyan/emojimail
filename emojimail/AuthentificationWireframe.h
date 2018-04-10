@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "RootWireframe.h"
 #import "AuthentificationPresenter.h"
+#import "AuthentificationModuleDelegate.h"
 
 
 @interface AuthentificationWireframe : NSObject
@@ -18,8 +19,12 @@
 
 @property AuthentificationPresenter *presenter;
 
+@property id<AuthentificationModuleDelegate> moduleDelegate;
+
 - (void)presentInitialViewFromWindow:(UIWindow *)window;
 
 - (void)presentGoogleSignInView;
+
+- (void)authentificationSuccededFromViewController:(UIViewController *)viewController;
 
 @end

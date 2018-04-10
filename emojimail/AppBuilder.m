@@ -10,6 +10,9 @@
 #import "AuthentificationWireframe.h"
 #import "AuthentificationPresenter.h"
 #import "AuthentificationInteractor.h"
+#import "MessageListWireframe.h"
+#import "MessageListPresenter.h"
+#import "MessageListInteractor.h"
 
 
 @interface AppBuilder ()
@@ -42,6 +45,18 @@
     authentificationPresenter.wireframe = authentificationWireframe;
     
     authentificationInteractor.output = authentificationPresenter;
+    
+    
+    MessageListWireframe *messageListWireframe = [[MessageListWireframe alloc] init];
+    MessageListPresenter *messageListPresenter = [[MessageListPresenter alloc] init];
+    MessageListInteractor *messageListInteractor = [[MessageListInteractor alloc] init];
+    
+    authentificationWireframe.moduleDelegate = messageListWireframe;
+    messageListWireframe.presenter = messageListPresenter;
+    
+    messageListPresenter.input = messageListInteractor;
+    
+    messageListInteractor.output = messageListPresenter;
 }
 
 - (void)installRootViewControllerIntoWindow:(UIWindow *)window {

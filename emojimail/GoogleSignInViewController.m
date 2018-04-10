@@ -87,4 +87,8 @@
     [self startActivityIndicator];
 }
 
+- (void)stopLoading {
+    [self stopActivityIndicator];
+}
+
 @end

@@ -23,7 +23,7 @@
 
 - (void)signInButtonAction {
     [self.input attemptedGoogleSignIn];
-    [self.view showLoading];
+    [self.googleSignInView showLoading];
 }
 
 #pragma mark - AuthentificationInteractorOutput
@@ -31,6 +31,8 @@
 - (void)silentGoogleSignInSucceded {
     NSLog(@"[%@] SILENT Google sign in succeded", NSStringFromClass(self.class));
     //TODO: Tell the wireframe to go to HOME VC
+    
+    [self.wireframe authentificationSuccededFromViewController:self.initialView];
 }
 
 - (void)silentGoogleSignInFailed {
@@ -41,10 +43,13 @@
 - (void)googleSignInSucceded {
     NSLog(@"[%@] Google sign in succeded", NSStringFromClass(self.class));
     //TODO: Tell the wireframe to go to HOME VC
+    
+    [self.wireframe authentificationSuccededFromViewController:self.googleSignInView];
 }
 
 - (void)googleSignInFailed {
     NSLog(@"[%@] Google sign in failed", NSStringFromClass(self.class));
+    [self.googleSignInView stopLoading];
     //TODO: DO NOTHING
 }
 

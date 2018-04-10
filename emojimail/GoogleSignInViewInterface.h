@@ -13,4 +13,6 @@
 
 - (void)showLoading;
 
+- (void)stopLoading;
+
 @end
