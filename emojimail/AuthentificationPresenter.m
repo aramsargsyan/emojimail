@@ -30,6 +30,7 @@
 
 - (void)silentGoogleSignInSucceded {
     NSLog(@"[%@] SILENT Google sign in succeded", NSStringFromClass(self.class));
+    //TODO: Tell the wireframe to go to HOME VC
 }
 
 - (void)silentGoogleSignInFailed {
@@ -39,10 +40,12 @@
 
 - (void)googleSignInSucceded {
     NSLog(@"[%@] Google sign in succeded", NSStringFromClass(self.class));
+    //TODO: Tell the wireframe to go to HOME VC
 }
 
 - (void)googleSignInFailed {
     NSLog(@"[%@] Google sign in failed", NSStringFromClass(self.class));
+    //TODO: DO NOTHING
 }
 
 @end

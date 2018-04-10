@@ -8,12 +8,11 @@
 
 
 #import <UIKit/UIKit.h>
-#import "AuthentificationPresenter.h"
+#import "InitialViewEventHandler.h"
 
 
 @interface InitialViewController : UIViewController
 
-//TODO: Create a protocol and use id<> here
-@property AuthentificationPresenter *eventHandler;
+@property id<InitialViewEventHandler> eventHandler;
 
 @end

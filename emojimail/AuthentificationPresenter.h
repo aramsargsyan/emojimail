@@ -6,22 +6,18 @@
 //  Copyright © 2018 Aram Sargsyan. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "InitialViewEventHandler.h"
+#import "GoogleSignInViewEventHandler.h"
 #import "AuthentificationInteractor.h"
 #import "GoogleSignInViewInterface.h"
-#import <UIKit/UIKit.h>
 @class AuthentificationWireframe;
 
-@interface AuthentificationPresenter : NSObject <AuthentificationInteractorOutput>
+
+@interface AuthentificationPresenter : NSObject <AuthentificationInteractorOutput, InitialViewEventHandler, GoogleSignInViewEventHandler>
 
 @property (nonatomic, strong) id<AuthentificationInteractorInput> input;
 @property (nonatomic, weak) AuthentificationWireframe *wireframe;
 @property (nonatomic, strong) UIViewController<GoogleSignInViewInterface> *view;
-
-- (void)initialViewAppeared;
-
-- (void)signInButtonAction;
-
-- (void)openGoogleSignInPage;
 
 @end

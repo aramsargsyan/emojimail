@@ -75,8 +75,8 @@
     [self.activityIndicator startAnimating];
 }
 
-// GIDSignInButton handles the Safari ViewController push, this action is just for UI changes
 - (void)signInTapped {
+    /* GIDSignInButton handles the Safari ViewController push, this action is just for UI changes */
     [self.eventHandler signInButtonAction];
 }
 
