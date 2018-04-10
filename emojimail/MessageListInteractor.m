@@ -101,9 +101,6 @@
                     NSInteger mainIndex = [self.messages indexOfObject:message];
                     self.messages[mainIndex] = newMessage;
                     if ([self areStatusesEntirelyPositive:statusArray]) {
-                        //[self.delegate refresh];
-                        //TODO: ARAM AHAAAAAAAAAAA
-                        
                         [self.output gotEmails:self.messages];
                     }
                 }

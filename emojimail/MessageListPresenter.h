@@ -13,5 +13,6 @@
 @interface MessageListPresenter : NSObject <MessageListInteractorOutput, MessageListViewEventHandler>
 
 @property id<MessageListInteractorInput> input;
+//TODO: ARAM add VC here
 
 @end

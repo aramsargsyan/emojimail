@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24244508207D160B0075C6AC /* MessageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 24244507207D160B0075C6AC /* MessageItem.m */; };
 		243305352078CCF000D6A19C /* AppBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 243305342078CCF000D6A19C /* AppBuilder.m */; };
 		243305392078D28F00D6A19C /* AuthentificationWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 243305382078D28F00D6A19C /* AuthentificationWireframe.m */; };
 		2433053C2078D67900D6A19C /* RootWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433053B2078D67900D6A19C /* RootWireframe.m */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		1690292B101CE03A9D5863B8 /* libPods-emojimail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-emojimail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24244506207D160B0075C6AC /* MessageItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageItem.h; sourceTree = "<group>"; };
+		24244507207D160B0075C6AC /* MessageItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageItem.m; sourceTree = "<group>"; };
 		243305322078CC0A00D6A19C /* GoogleSignInViewInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GoogleSignInViewInterface.h; path = /Users/aram/Documents/emojimail/emojimail/GoogleSignInViewInterface.h; sourceTree = "<absolute>"; };
 		243305332078CCF000D6A19C /* AppBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBuilder.h; sourceTree = "<group>"; };
 		243305342078CCF000D6A19C /* AppBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBuilder.m; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				248D0D19207CF0180084669E /* MessageListViewEventHandler.h */,
 				24F781AA1F70621900C81BC9 /* MessageListViewController.h */,
 				24F781AB1F70621900C81BC9 /* MessageListViewController.m */,
+				24244506207D160B0075C6AC /* MessageItem.h */,
+				24244507207D160B0075C6AC /* MessageItem.m */,
 				24F781AD1F727DE600C81BC9 /* MessageTableViewCell.h */,
 				24F781AE1F727DE600C81BC9 /* MessageTableViewCell.m */,
 				24F781AF1F727DE600C81BC9 /* MessageTableViewCell.xib */,
@@ -377,6 +382,7 @@
 				24F781B01F727DE600C81BC9 /* MessageTableViewCell.m in Sources */,
 				248D0D13207CD5AB0084669E /* MessageListWireframe.m in Sources */,
 				24F7819F1F70432F00C81BC9 /* MessagesDataSource.m in Sources */,
+				24244508207D160B0075C6AC /* MessageItem.m in Sources */,
 				243305422078D9B900D6A19C /* AuthentificationInteractor.m in Sources */,
 				24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */,
 				248D0D16207CD5BC0084669E /* MessageListPresenter.m in Sources */,

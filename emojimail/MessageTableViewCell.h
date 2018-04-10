@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GTLRGmail.h>
 
 
 @interface MessageTableViewCell : UITableViewCell
@@ -16,6 +15,6 @@
 
 + (CGFloat)defaultCellHeight;
 
-- (void)render:(GTLRGmail_Message *)message;
+- (void)renderMessageItem:(MessageItem *)messageItem;
 
 @end

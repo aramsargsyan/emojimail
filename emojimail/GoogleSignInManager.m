@@ -71,7 +71,6 @@
     
     
     if (signIn.hasAuthInKeychain) {
-        //ARAM THE BUG IS HERE
         self.completion = completion;
         [signIn signInSilently];
     } else {

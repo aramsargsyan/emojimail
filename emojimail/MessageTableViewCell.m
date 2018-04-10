@@ -8,6 +8,7 @@
 
 #import "MessageTableViewCell.h"
 #import "MessagesDataSource.h"
+#import "MessageItem.h"
 
 
 @interface MessageTableViewCell ()
@@ -30,7 +31,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    // No need for selection on these cells
+    // No need for selection on this cell
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
@@ -53,37 +54,12 @@
     return 120;
 }
 
-
-- (void)render:(GTLRGmail_Message *)message {
-    self.snippetLabel.text = message.snippet;
-    
-    // The timestamp provided by Google is in milliseconds
-    double timestamp = message.internalDate.doubleValue/1000;
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    // Show time for today's messages, show date for older messages
-    BOOL isDateFromToday = [[NSCalendar currentCalendar] isDateInToday:date];
-    if (isDateFromToday) {
-        [dateFormatter setDateFormat:@"HH:mm"];
-    } else {
-        [dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    }
-    self.timeLabel.text = [dateFormatter stringFromDate:date];
-    
-    for (GTLRGmail_MessagePartHeader *header in message.payload.headers) {
-        if ([header.name isEqualToString:@"From"]) {
-            self.fromLabel.text = header.value;
-        } else if ([header.name isEqualToString:@"Subject"]) {
-            self.subjectLabel.text = header.value;
-        }
-    }
-    
-    if (message.emojiString) {
-        self.emojiLabel.text = message.emojiString;
-    } else {
-        self.emojiLabel.text = @"😐";
-    }
+- (void)renderMessageItem:(MessageItem *)messageItem {
+    self.subjectLabel.text = messageItem.subject;
+    self.snippetLabel.text = messageItem.snippet;
+    self.fromLabel.text = messageItem.from;
+    self.timeLabel.text = messageItem.dateString;
+    self.emojiLabel.text = messageItem.emojiString;
 }
 
 

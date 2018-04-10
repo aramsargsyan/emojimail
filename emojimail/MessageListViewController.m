@@ -10,15 +10,19 @@
 #import "MessagesDataSource.h"
 #import "MessageTableViewCell.h"
 #import "UIView+Autolayout.h"
+#import "MessageTableViewCell.h"
+#import "MessageItem.h"
 
 
-@interface MessageListViewController () <MessagesDataSourceDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface MessageListViewController () <UITableViewDelegate, UITableViewDataSource> //MessagesDataSourceDelegate
 
-@property (nonatomic) MessagesDataSource *dataSource;
+//@property (nonatomic) MessagesDataSource *dataSource;
 
 @property (nonatomic) UITableView *messagesTableView;
 
 @property (nonatomic) UIActivityIndicatorView *activityIndicator;
+
+@property (nonatomic) NSArray<MessageItem *> *messageItems;
 
 @end
 
@@ -57,11 +61,6 @@
     self.messagesTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.messagesTableView registerNib:[UINib nibWithNibName:NSStringFromClass(MessageTableViewCell.class) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[MessageTableViewCell defaultReuseIdentifier]];
     
-//    self.dataSource = [[MessagesDataSource alloc] init];
-//    self.messagesTableView.dataSource = self;
-//    self.messagesTableView.delegate = self;
-//    self.dataSource.delegate = self;
-    
     self.messagesTableView.hidden = YES;
     
     [self.view addSubview:self.messagesTableView];
@@ -79,11 +78,32 @@
     [self.activityIndicator startAnimating];
 }
 
+
 #pragma mark - UITableViewDataSource
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.messageItems.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[MessageTableViewCell defaultReuseIdentifier] forIndexPath:indexPath];
+    
+    // Request for the next page when the user reaches last 10 messages
+    if ((indexPath.row == self.messageItems.count - 10)) {// && !self.requestInProcess) {
+        //[self requestForMessagesList];
+        
+        //TODO: ARAM presenteeeer
+    }
+    
+    [cell renderMessageItem:self.messageItems[indexPath.row]];
+    
+    return cell;
+}
 
 
 #pragma mark - UITableViewDelegate
