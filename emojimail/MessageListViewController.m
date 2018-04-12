@@ -7,16 +7,13 @@
 //
 
 #import "MessageListViewController.h"
-#import "MessagesDataSource.h"
 #import "MessageTableViewCell.h"
 #import "UIView+Autolayout.h"
 #import "MessageTableViewCell.h"
 #import "MessageItem.h"
 
 
-@interface MessageListViewController () <UITableViewDelegate, UITableViewDataSource> //MessagesDataSourceDelegate
-
-//@property (nonatomic) MessagesDataSource *dataSource;
+@interface MessageListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) UITableView *messagesTableView;
 
@@ -36,14 +33,18 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
     [self configureNavigationBar];
     [self configureTableView];
     [self configureActivityIndicator];
     
-    [self.eventHandler updateTableView];
+    [self showLoading];
+    [self.eventHandler viewLoaded];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 #pragma mark - Views
 
@@ -60,21 +61,27 @@
 - (void)configureTableView {
     self.messagesTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.messagesTableView registerNib:[UINib nibWithNibName:NSStringFromClass(MessageTableViewCell.class) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[MessageTableViewCell defaultReuseIdentifier]];
-    
-    self.messagesTableView.hidden = YES;
+    self.messagesTableView.dataSource = self;
+    self.messagesTableView.delegate = self;
     
     [self.view addSubview:self.messagesTableView];
     self.messagesTableView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.messagesTableView autopinEdgesToSuperview];
+    
+    self.messagesTableView.hidden = YES;
 }
 
 
 - (void)configureActivityIndicator {
     self.activityIndicator = [[UIActivityIndicatorView alloc] init];
+    self.activityIndicator.color = [UIColor grayColor];
     self.activityIndicator.hidesWhenStopped = YES;
     [self.view addSubview:self.activityIndicator];
     self.activityIndicator.translatesAutoresizingMaskIntoConstraints = NO;
     [self.activityIndicator autocenterInSuperview];
+}
+
+- (void)showLoading {
     [self.activityIndicator startAnimating];
 }
 
@@ -93,11 +100,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[MessageTableViewCell defaultReuseIdentifier] forIndexPath:indexPath];
     
-    // Request for the next page when the user reaches last 10 messages
-    if ((indexPath.row == self.messageItems.count - 10)) {// && !self.requestInProcess) {
-        //[self requestForMessagesList];
-        
-        //TODO: ARAM presenteeeer
+    if ((indexPath.row == self.messageItems.count - 20)) {
+        [self.eventHandler scrolledToBottom];
     }
     
     [cell renderMessageItem:self.messageItems[indexPath.row]];
@@ -123,5 +127,11 @@
     [self.activityIndicator stopAnimating];
 }
 
+#pragma mark - MessageListViewInterface
+
+- (void)showMessageList:(NSArray<MessageItem *> *)messageItems {
+    self.messageItems = messageItems;
+    [self refresh];
+}
 
 @end

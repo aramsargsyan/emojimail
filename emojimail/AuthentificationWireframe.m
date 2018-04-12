@@ -35,7 +35,7 @@
     googleSignInViewController.eventHandler = self.presenter;
     self.presenter.googleSignInView = googleSignInViewController;
     
-    [self.navigationController presentViewController:googleSignInViewController animated:YES completion:nil];
+    [self.navigationController setViewControllers:@[googleSignInViewController] animated:NO];
 }
 
 - (InitialViewController *)initialViewController {

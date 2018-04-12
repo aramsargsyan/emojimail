@@ -10,6 +10,8 @@
 
 @protocol MessageListViewEventHandler <NSObject>
 
-- (void)updateTableView;
+- (void)viewLoaded;
+
+- (void)scrolledToBottom;
 
 @end

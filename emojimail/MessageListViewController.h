@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MessageListViewInterface.h"
 #import "MessageListViewEventHandler.h"
 
-@interface MessageListViewController : UIViewController
+@interface MessageListViewController : UIViewController <MessageListViewInterface>
 
-@property id<MessageListViewEventHandler> eventHandler;
+@property (nonatomic, strong) id<MessageListViewEventHandler> eventHandler;
 
 @end

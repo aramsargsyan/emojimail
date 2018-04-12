@@ -57,9 +57,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    // Reset button/activity indicator states
-    [self stopActivityIndicator];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 

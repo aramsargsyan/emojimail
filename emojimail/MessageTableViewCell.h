@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class MessageItem;
 
 @interface MessageTableViewCell : UITableViewCell
 

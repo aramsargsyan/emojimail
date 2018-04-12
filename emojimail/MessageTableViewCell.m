@@ -7,7 +7,6 @@
 //
 
 #import "MessageTableViewCell.h"
-#import "MessagesDataSource.h"
 #import "MessageItem.h"
 
 

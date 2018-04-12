@@ -16,8 +16,6 @@
 
 @interface MessageListPresenter ()
 
-@property NSArray<MessageItem *> *messageItems;
-
 @end
 
 
@@ -25,17 +23,18 @@
 
 #pragma mark - MessageListViewEventHandler
 
-- (void)updateTableView {
+- (void)viewLoaded {
+    [self.input getEmails];
+}
+
+- (void)scrolledToBottom {
     [self.input getEmails];
 }
 
 #pragma mark - MessageListInteractorOutput
 
 - (void)gotEmails:(NSArray<GTLRGmail_Message *> *)emails {
-    NSLog(@"GOT EMAILS");
-    
-    self.messageItems = [self messageItemsFromGmailMessageObjects:emails];
-    
+    [self.messageListView showMessageList:[self messageItemsFromGmailMessageObjects:emails]];
 }
 
 #pragma mark - Private

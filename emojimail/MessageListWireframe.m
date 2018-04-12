@@ -22,6 +22,7 @@
 - (void)presentMessagesList {
     MessageListViewController *listViewController = [self messageListViewController];
     listViewController.eventHandler = self.presenter;
+    self.presenter.messageListView = listViewController;
     
     [self.navigationController setViewControllers:@[listViewController] animated:NO];
 }

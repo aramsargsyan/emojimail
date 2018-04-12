@@ -45,20 +45,22 @@
 #pragma mark - Requests handling
 
 - (void)requestForMessagesList {
-    self.requestInProcess = YES;
-    
-    // Get the mail list with no content
-    GTLRGmailQuery_UsersMessagesList *query = [GTLRGmailQuery_UsersMessagesList queryWithUserId:@"me"];
-    
-    //query.q = @"rfc822msgid: is:unread";
-    
-    if (self.nextPageToken) {
-        query.pageToken = self.nextPageToken;
+    if (!self.requestInProcess) {
+        self.requestInProcess = YES;
+        
+        // Get the mail list with no content
+        GTLRGmailQuery_UsersMessagesList *query = [GTLRGmailQuery_UsersMessagesList queryWithUserId:@"me"];
+        
+        //query.q = @"rfc822msgid: is:unread";
+        
+        if (self.nextPageToken) {
+            query.pageToken = self.nextPageToken;
+        }
+        
+        [self.service executeQuery:query
+                          delegate:self
+                 didFinishSelector:@selector(mailListRequestOnCompletion:finishedWithObject:error:)];
     }
-    
-    [self.service executeQuery:query
-                      delegate:self
-             didFinishSelector:@selector(mailListRequestOnCompletion:finishedWithObject:error:)];
 }
 
 - (void)mailListRequestOnCompletion:(GTLRServiceTicket *)ticket

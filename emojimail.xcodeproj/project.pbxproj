@@ -24,7 +24,6 @@
 		24F781901F70384300C81BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F7818F1F70384300C81BC9 /* Assets.xcassets */; };
 		24F781931F70384300C81BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F781911F70384300C81BC9 /* LaunchScreen.storyboard */; };
 		24F7819B1F70384E00C81BC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */; };
-		24F7819F1F70432F00C81BC9 /* MessagesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F7819E1F70432F00C81BC9 /* MessagesDataSource.m */; };
 		24F781A41F70456C00C81BC9 /* GoogleSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A21F70456C00C81BC9 /* GoogleSignInViewController.m */; };
 		24F781A51F70456C00C81BC9 /* GoogleSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24F781A31F70456C00C81BC9 /* GoogleSignInViewController.xib */; };
 		24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F781A71F705ED200C81BC9 /* GoogleSignInManager.m */; };
@@ -39,7 +38,6 @@
 		1690292B101CE03A9D5863B8 /* libPods-emojimail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-emojimail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24244506207D160B0075C6AC /* MessageItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageItem.h; sourceTree = "<group>"; };
 		24244507207D160B0075C6AC /* MessageItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageItem.m; sourceTree = "<group>"; };
-		243305322078CC0A00D6A19C /* GoogleSignInViewInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GoogleSignInViewInterface.h; path = /Users/aram/Documents/emojimail/emojimail/GoogleSignInViewInterface.h; sourceTree = "<absolute>"; };
 		243305332078CCF000D6A19C /* AppBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBuilder.h; sourceTree = "<group>"; };
 		243305342078CCF000D6A19C /* AppBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBuilder.m; sourceTree = "<group>"; };
 		243305372078D28F00D6A19C /* AuthentificationWireframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationWireframe.h; sourceTree = "<group>"; };
@@ -50,6 +48,8 @@
 		2433053E2078D9A500D6A19C /* AuthentificationPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthentificationPresenter.m; sourceTree = "<group>"; };
 		243305402078D9B900D6A19C /* AuthentificationInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthentificationInteractor.h; sourceTree = "<group>"; };
 		243305412078D9B900D6A19C /* AuthentificationInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthentificationInteractor.m; sourceTree = "<group>"; };
+		245C289D207FBEC3001F27D8 /* GoogleSignInViewInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleSignInViewInterface.h; sourceTree = "<group>"; };
+		245C289E207FC18B001F27D8 /* MessageListViewInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListViewInterface.h; sourceTree = "<group>"; };
 		248D0D0E207CD5940084669E /* MessageListInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListInteractor.h; sourceTree = "<group>"; };
 		248D0D0F207CD5940084669E /* MessageListInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListInteractor.m; sourceTree = "<group>"; };
 		248D0D11207CD5AB0084669E /* MessageListWireframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListWireframe.h; sourceTree = "<group>"; };
@@ -75,8 +75,6 @@
 		24F781921F70384300C81BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24F781941F70384300C81BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24F7819A1F70384E00C81BC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		24F7819D1F70432F00C81BC9 /* MessagesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesDataSource.h; sourceTree = "<group>"; };
-		24F7819E1F70432F00C81BC9 /* MessagesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesDataSource.m; sourceTree = "<group>"; };
 		24F781A11F70456C00C81BC9 /* GoogleSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleSignInViewController.h; sourceTree = "<group>"; };
 		24F781A21F70456C00C81BC9 /* GoogleSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleSignInViewController.m; sourceTree = "<group>"; };
 		24F781A31F70456C00C81BC9 /* GoogleSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleSignInViewController.xib; sourceTree = "<group>"; };
@@ -120,7 +118,7 @@
 				24F781B31F72801400C81BC9 /* InitialViewController.h */,
 				24F781B41F72801400C81BC9 /* InitialViewController.m */,
 				24BA2B38207CD0B300732B3E /* GoogleSignInViewEventHandler.h */,
-				243305322078CC0A00D6A19C /* GoogleSignInViewInterface.h */,
+				245C289D207FBEC3001F27D8 /* GoogleSignInViewInterface.h */,
 				24F781A11F70456C00C81BC9 /* GoogleSignInViewController.h */,
 				24F781A21F70456C00C81BC9 /* GoogleSignInViewController.m */,
 				24F781A31F70456C00C81BC9 /* GoogleSignInViewController.xib */,
@@ -216,6 +214,7 @@
 				248D0D0E207CD5940084669E /* MessageListInteractor.h */,
 				248D0D0F207CD5940084669E /* MessageListInteractor.m */,
 				248D0D19207CF0180084669E /* MessageListViewEventHandler.h */,
+				245C289E207FC18B001F27D8 /* MessageListViewInterface.h */,
 				24F781AA1F70621900C81BC9 /* MessageListViewController.h */,
 				24F781AB1F70621900C81BC9 /* MessageListViewController.m */,
 				24244506207D160B0075C6AC /* MessageItem.h */,
@@ -223,8 +222,6 @@
 				24F781AD1F727DE600C81BC9 /* MessageTableViewCell.h */,
 				24F781AE1F727DE600C81BC9 /* MessageTableViewCell.m */,
 				24F781AF1F727DE600C81BC9 /* MessageTableViewCell.xib */,
-				24F7819D1F70432F00C81BC9 /* MessagesDataSource.h */,
-				24F7819E1F70432F00C81BC9 /* MessagesDataSource.m */,
 			);
 			name = MessageListModule;
 			sourceTree = "<group>";
@@ -381,7 +378,6 @@
 				24F781B51F72801400C81BC9 /* InitialViewController.m in Sources */,
 				24F781B01F727DE600C81BC9 /* MessageTableViewCell.m in Sources */,
 				248D0D13207CD5AB0084669E /* MessageListWireframe.m in Sources */,
-				24F7819F1F70432F00C81BC9 /* MessagesDataSource.m in Sources */,
 				24244508207D160B0075C6AC /* MessageItem.m in Sources */,
 				243305422078D9B900D6A19C /* AuthentificationInteractor.m in Sources */,
 				24F781A81F705ED200C81BC9 /* GoogleSignInManager.m in Sources */,

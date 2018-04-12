@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "MessageListInteractorIO.h"
 #import "MessageListViewEventHandler.h"
+#import "MessageListViewInterface.h"
 
 @interface MessageListPresenter : NSObject <MessageListInteractorOutput, MessageListViewEventHandler>
 
-@property id<MessageListInteractorInput> input;
-//TODO: ARAM add VC here
+@property (nonatomic, strong) id<MessageListInteractorInput> input;
+@property (nonatomic, weak) id<MessageListViewInterface> messageListView;
 
 @end
